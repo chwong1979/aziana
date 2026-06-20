@@ -56,10 +56,10 @@
       --ink:#0c0a0d; --ink2:#15121a; --panel:#1d1923; --purple:#7b0046; --purple2:#9b1968; --amber:#ef8b17; --bone:#f3ece0; --dim:#cac1c9; --muted:#877d8a; --line:rgba(243,236,224,.14);
       --display:'Cormorant Garamond','Times New Roman',serif; --body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
     }
-    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{background:var(--ink);color:var(--bone);font-family:var(--body);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased} img{max-width:100%;display:block} a{color:inherit;text-decoration:none}
+    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth;overflow-x:hidden} body{background:var(--ink);color:var(--bone);font-family:var(--body);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden} img{max-width:100%;display:block} a{color:inherit;text-decoration:none} button{font:inherit} section{scroll-margin-top:5rem} :focus-visible{outline:2px solid var(--amber);outline-offset:4px}
     .wrap{max-width:1220px;margin:auto;padding:0 clamp(1.25rem,4vw,3rem)}
     .nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3rem);background:linear-gradient(180deg,rgba(12,10,13,.92),rgba(12,10,13,.35),transparent);backdrop-filter:blur(8px)}
-    .nav img{height:46px}.nav ul{list-style:none;display:flex;align-items:center;gap:2rem}.nav a,.nav span{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);cursor:pointer}.nav a:hover,.nav span:hover{color:var(--amber)}.nav-cta{border:1px solid var(--amber);padding:.65rem 1.1rem;color:var(--amber)!important}
+    .nav img{height:46px}.nav ul{list-style:none;display:flex;align-items:center;gap:2rem}.nav a,.nav span,.nav button{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);cursor:pointer}.nav a:hover,.nav span:hover,.nav button:hover{color:var(--amber)}.nav-cta{border:1px solid var(--amber);padding:.65rem 1.1rem;color:var(--amber)!important;background:transparent}.menu-toggle{display:none;width:46px;height:46px;border:1px solid var(--line);background:rgba(12,10,13,.72);color:var(--bone);align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer}.menu-toggle span{width:20px;height:1px;background:currentColor;transition:transform .25s ease,opacity .25s ease}.mobile-actions{display:none}
     .hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding:9rem 0 5rem}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,13,.45),rgba(12,10,13,.9)),linear-gradient(90deg,rgba(44,5,39,.65),transparent),url('images/hero.jpg') center/cover;transform:scale(1.04)}.hero .wrap{position:relative;z-index:1}.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);font-weight:500;margin-bottom:1rem}.hero h1{font-family:var(--display);font-size:clamp(3rem,8vw,6rem);font-weight:300;line-height:1}.hero h1 em,.section-title em{color:var(--amber);font-style:italic}.hero p{font-family:var(--display);font-size:clamp(1.25rem,2vw,1.55rem);color:var(--dim);max-width:640px;margin:1.4rem 0}.tags{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}.tags span{color:var(--amber);margin:0 .35rem}
     .btns{display:flex;gap:1rem;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.6rem;border:1px solid var(--amber);background:var(--amber);color:var(--ink);font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}.btn.secondary{background:transparent;color:var(--amber)}.proof{display:inline-flex;margin-top:1.7rem;color:var(--dim);font-size:.8rem;letter-spacing:.12em}.proof b{color:var(--amber);margin-right:.5rem}
     section{padding:clamp(4rem,9vw,7rem) 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}.section-title{font-family:var(--display);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:300;line-height:1.1;margin:.8rem 0 1.2rem}.lede{font-family:var(--display);font-size:clamp(1.12rem,2vw,1.45rem);color:var(--dim);max-width:66ch}.prose{color:var(--dim);max-width:66ch}.prose p+p{margin-top:1rem}.photo{overflow:hidden;background:var(--panel);border:1px solid var(--line)}.photo img{width:100%;height:100%;object-fit:cover}.setting .photo{aspect-ratio:4/5}.dark{background:var(--ink2)}
@@ -69,20 +69,21 @@
     .story{background:#2c0527;position:relative}.bar .photo{aspect-ratio:1}.events .gallery{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}.events figure{position:relative;overflow:hidden}.events img{aspect-ratio:4/3;object-fit:cover;width:100%;filter:brightness(.9)}.events figcaption{position:absolute;left:1rem;bottom:1rem;background:rgba(12,10,13,.75);border-left:2px solid var(--amber);padding:.45rem .8rem;text-transform:uppercase;letter-spacing:.2em;font-size:.7rem}
     .visit-aerial{aspect-ratio:21/9;overflow:hidden;margin:2rem 0 3rem}.visit-aerial img{width:100%;height:100%;object-fit:cover}.info-block{margin-bottom:1.5rem}.label{display:block;color:var(--amber);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:.45rem}.content{font-family:var(--display);font-size:1.2rem;color:var(--bone)}.content a{border-bottom:1px solid var(--line)}.content a:hover{color:var(--amber)}.hours{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.5rem;font-family:var(--display);font-size:1.1rem}.hours span:nth-child(even){text-align:right}.map iframe{width:100%;min-height:420px;border:0;filter:invert(.92) hue-rotate(230deg) saturate(.55) brightness(.95)}
     footer{border-top:1px solid var(--line);padding:3rem 0;background:var(--ink)}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem}.footer-grid img{height:54px;margin-bottom:1rem}.footer-grid h3{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem}.footer-grid ul{list-style:none}.footer-grid li{margin:.55rem 0}.footer-grid a,.footer-grid span{color:var(--dim);font-size:.9rem;cursor:pointer}.bottom{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.78rem}
-    @media(max-width:850px){.nav ul{display:none}.grid,.cards,.menu-grid,.events .gallery,.footer-grid{grid-template-columns:1fr}.wide{grid-column:auto}.hero:before{background:linear-gradient(180deg,rgba(12,10,13,.38),rgba(12,10,13,.92)),linear-gradient(90deg,rgba(44,5,39,.55),transparent),url('images/hero-mobile.jpg') center/cover}.hero .wrap{min-width:0;overflow:hidden}.hero h1{font-size:clamp(2.45rem,12vw,3.2rem);overflow-wrap:anywhere}.hero p{font-size:1.15rem}.btns{display:grid;grid-template-columns:1fr}.btns .btn{width:100%;justify-content:center}.visit-aerial{aspect-ratio:4/3}.gallery-heading{display:block}.gallery-heading .lede{margin-top:1rem}.dining-gallery{grid-template-columns:1fr;grid-template-rows:none}.gallery-sushi,.gallery-poke,.gallery-platter{grid-column:auto;grid-row:auto;aspect-ratio:4/3}}
+    @media(max-width:850px){body{padding-bottom:68px}.wrap{padding-inline:1.2rem}.nav{padding:.75rem 1.2rem;background:rgba(12,10,13,.94);border-bottom:1px solid var(--line)}.nav img{height:40px}.menu-toggle{display:flex}.nav.open .menu-toggle span:first-child{transform:translateY(6px) rotate(45deg)}.nav.open .menu-toggle span:nth-child(2){opacity:0}.nav.open .menu-toggle span:last-child{transform:translateY(-6px) rotate(-45deg)}.nav ul{position:fixed;z-index:-1;top:65px;left:0;right:0;display:flex;align-items:stretch;flex-direction:column;gap:0;padding:.5rem 1.2rem 1.2rem;background:rgba(12,10,13,.98);border-bottom:1px solid var(--line);transform:translateY(-115%);opacity:0;visibility:hidden;transition:transform .25s ease,opacity .25s ease,visibility .25s}.nav.open ul{transform:translateY(0);opacity:1;visibility:visible}.nav li{border-bottom:1px solid var(--line)}.nav li:last-child{border:0;margin-top:.5rem}.nav ul a,.nav ul button{display:flex;width:100%;min-height:48px;align-items:center;background:transparent;border:0;color:var(--bone);text-align:left}.nav .nav-cta{justify-content:center;border:1px solid var(--amber);color:var(--amber)!important}.grid,.cards,.menu-grid,.events .gallery,.footer-grid{grid-template-columns:1fr}.wide{grid-column:auto}.hero{min-height:100svh;padding:7.5rem 0 3.5rem}.hero:before{background:linear-gradient(180deg,rgba(12,10,13,.38),rgba(12,10,13,.92)),linear-gradient(90deg,rgba(44,5,39,.55),transparent),url('images/hero-mobile.jpg') center/cover}.hero .wrap{width:100%;min-width:0}.hero h1{max-width:100%;font-size:clamp(2.35rem,11.5vw,3.15rem);line-height:1.02}.hero p{font-size:1.08rem;line-height:1.55;margin:1.1rem 0}.eyebrow{font-size:.65rem;letter-spacing:.22em}.tags{font-size:.68rem;line-height:1.9;letter-spacing:.16em;margin-bottom:1.4rem}.btns{display:grid;grid-template-columns:1fr}.btns .btn{width:100%;min-height:54px;justify-content:center;border-radius:0}.proof{font-size:.7rem;line-height:1.5;letter-spacing:.06em}.cards{gap:1rem}.card{min-height:260px}.setting .photo{aspect-ratio:4/3}.visit-aerial{aspect-ratio:4/3}.gallery-heading{display:block}.gallery-heading .lede{margin-top:1rem}.dining-gallery{grid-template-columns:1fr;grid-template-rows:none}.gallery-sushi,.gallery-poke,.gallery-platter{grid-column:auto;grid-row:auto;aspect-ratio:4/3}.hours{font-size:1rem;gap:.45rem 1rem}.map iframe{min-height:320px}.bottom{padding-bottom:1rem}.mobile-actions{position:fixed;z-index:40;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr 1fr;height:68px;background:rgba(12,10,13,.98);border-top:1px solid var(--line);padding:7px}.mobile-actions a,.mobile-actions button{display:flex;align-items:center;justify-content:center;border:0;border-right:1px solid var(--line);background:transparent;color:var(--bone);font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}.mobile-actions button:first-child{background:var(--amber);color:var(--ink)}.mobile-actions a:last-child{border-right:0}}
   </style>
 </head>
 <body>
   <nav class="nav" aria-label="Primary navigation">
     <a href="#top" aria-label="Aziana home"><img src="Aziana_logo.png" alt="Aziana logo" /></a>
-    <ul>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-links" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+    <ul id="primary-links">
       <li><a href="#setting">Setting</a></li>
       <li><a href="#cuisine">Cuisine</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#story">Story</a></li>
       <li><a href="#bar">Bar</a></li>
       <li><a href="#visit">Visit</a></li>
-      <li><span class="glf-button nav-cta" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order</span></li>
+      <li><button type="button" class="glf-button nav-cta" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order</button></li>
     </ul>
   </nav>
 
@@ -93,8 +94,8 @@
       <p>Aziana is a waterfront restaurant at Bobby's Marina in Philipsburg, Sint Maarten, serving fresh sushi, seafood, steaks, poke bowls and Chinese-Indonesian specialties.</p>
       <div class="tags">Sushi <span>·</span> Seafood <span>·</span> Steak <span>·</span> Satay <span>·</span> Pokebowls</div>
       <div class="btns">
-        <span class="glf-button btn" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order Online →</span>
-        <span class="glf-button btn secondary" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0" data-glf-reservation="true">Reserve a Table →</span>
+        <button type="button" class="glf-button btn" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order Online →</button>
+        <button type="button" class="glf-button btn secondary" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0" data-glf-reservation="true">Reserve a Table →</button>
       </div>
       <a class="proof" href="https://www.tripadvisor.com/Restaurant_Review-g147347-d15843803-Reviews-Aziana_BV-Philipsburg_Sint_Maarten_St_Martin_St_Maarten.html" target="_blank" rel="noopener"><b>★★★★½</b> 4.5 · Travelers' Choice on Tripadvisor</a>
     </div>
@@ -231,7 +232,21 @@
     </div>
   </footer>
 
+  <div class="mobile-actions" aria-label="Quick actions">
+    <button type="button" class="glf-button" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order</button>
+    <button type="button" class="glf-button" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0" data-glf-reservation="true">Reserve</button>
+    <a href="https://wa.me/17215880022" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
   <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
-  <script>const y=document.getElementById('copyYear');if(y)y.textContent=new Date().getFullYear();</script>
+  <script>
+    const y=document.getElementById('copyYear');if(y)y.textContent=new Date().getFullYear();
+    const nav=document.querySelector('.nav');
+    const toggle=document.querySelector('.menu-toggle');
+    const closeMenu=()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu')};
+    toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu')});
+    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
+  </script>
 </body>
 </html>
