@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "aziana",
+  "account_id": "3ac5d115eca6bbd45805f5578d924efc",
+  "compatibility_date": "2026-06-20",
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
