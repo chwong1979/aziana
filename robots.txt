@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aziana.chwong1979.workers.dev/sitemap.xml
