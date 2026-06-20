@@ -2,13 +2,13 @@
 
 Static marketing site for **Aziana**, Asian fusion dining at Bobby's Marina, Philipsburg, Sint Maarten.
 
-- **Source of truth:** this repo. Pushes to `main` auto-deploy via a Git-connected Cloudflare Pages project.
-- **Build:** none — self-contained static site. Pages **output directory = repository root**.
-- **Entry:** `index.html` (inline CSS, Google Fonts via CDN). Assets in `images/`, menu in `menus/`, logo `Aziana_logo.png`. All asset paths are relative.
+- **Source of truth:** this repo. Pushes to `main` auto-deploy through Cloudflare Workers Builds.
+- **Build:** none — self-contained static site deployed from `public/` with Workers Static Assets.
+- **Entry:** `public/index.html` (inline CSS, Google Fonts via CDN). Assets in `public/images/`, menu in `public/menus/`, logo `public/Aziana_logo.png`. All browser asset paths are relative.
 - **Version:** v0.4.0 (see the `VERSION:` comment in `index.html`).
 
-## Deploy (Cloudflare Pages, Git-connected)
+## Deploy (Cloudflare Workers, Git-connected)
 
-Connect this repo - Production branch `main` - Framework preset: **None** - Build command: *(empty)* - Build output directory: **`/`**. No environment variables.
+Cloudflare watches the production branch `main` and runs `npx wrangler deploy`. The static-assets configuration lives in `wrangler.jsonc`; no environment variables are required.
 
-Previously served by the standalone `aziana` Cloudflare Worker (`aziana.chwong1979.workers.dev`); migrated to Git-connected Pages so deploys come from GitHub like the rest of the suite.
+The production Worker is `aziana` at `aziana.chwong1979.workers.dev`.
