@@ -12,6 +12,9 @@
     "orderCuid": "c11d4461-f717-4a32-a283-2b5b37a6b8ab",
     "orderRuid": "d4a3dc0d-10df-4722-949d-2840815cf5e0"
   },
+  "analytics": {
+    "googleMeasurementId": "G-CFSF36W3NQ"
+  },
   "hours": {
     "kitchen": {
       "Monday": "12:00 - 22:00",
