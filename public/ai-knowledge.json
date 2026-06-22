@@ -1,29 +1,272 @@
 {
+  "version": "0.2.0",
+  "purpose": "Starter in-house Q&A and guest-answer database for the future AIOS Aziana assistant. This file should answer common questions without needing an external AI call whenever the answer is already known.",
+  "source_policy": "Built from verified Aziana website repository content and known Aziana business facts. Do not invent live availability, exact wait times, delivery coverage, price changes, or special accommodations without current system data.",
+  "last_updated": "2026-06-22",
   "business": {
     "name": "Aziana",
+    "legal_name": "Aziana BV",
     "type": "Waterfront Asian fusion restaurant and bar",
     "location": "Bobby's Marina, Juancho Yrausquin Boulevard #22, Philipsburg, Sint Maarten",
+    "city_area": "Philipsburg, Sint Maarten",
     "website": "https://aziana.sx/",
     "phone": "+1 (721) 542-6988",
     "whatsapp": "+1 (721) 588-0022",
-    "email": "azianabv@gmail.com"
+    "email": "azianabv@gmail.com",
+    "facebook": "https://www.facebook.com/azianasxm/",
+    "instagram": "https://www.instagram.com/azianabv/",
+    "tripadvisor": "https://www.tripadvisor.com/Restaurant_Review-g147347-d15843803-Reviews-Aziana_BV-Philipsburg_Sint_Maarten_St_Martin_St_Maarten.html"
   },
   "hours": {
-    "monday": "12:00 - 22:00",
-    "tuesday": "12:00 - 22:00",
-    "wednesday": "12:00 - 22:00",
-    "thursday": "12:00 - 22:00",
-    "friday": "12:00 - 22:00",
-    "saturday": "12:00 - 22:00",
-    "sunday": "Closed"
+    "kitchen": {
+      "monday": "12:00 - 22:00",
+      "tuesday": "12:00 - 22:00",
+      "wednesday": "12:00 - 22:00",
+      "thursday": "12:00 - 22:00",
+      "friday": "12:00 - 22:00",
+      "saturday": "12:00 - 22:00",
+      "sunday": "Closed"
+    },
+    "bar_note": "The bar may continue after the kitchen has gone quiet. For late-night bar questions, ask the guest to call or WhatsApp Aziana."
   },
-  "cuisine": ["Sushi", "Sashimi", "Poke bowls", "Seafood", "Steak", "Satay", "Chinese-Indonesian specialties", "Asian fusion"],
-  "popular_items": ["Aziana's Snack Platter", "Babi Pangang", "Dragon Roll", "Seared Tuna Steak", "Rainbow Poke Bowl", "Grilled Salmon Steak", "Sushi-Sashimi Combination", "Salt & Pepper Shrimp"],
+  "cuisine": [
+    "Sushi",
+    "Sashimi",
+    "Poke bowls",
+    "Seafood",
+    "Steak",
+    "Satay",
+    "Chinese-Indonesian specialties",
+    "Asian fusion",
+    "Appetizers and salads",
+    "Snack platters"
+  ],
+  "popular_items": [
+    "Aziana's Snack Platter",
+    "Babi Pangang",
+    "Dragon Roll",
+    "Seared Tuna Steak",
+    "Rainbow Poke Bowl",
+    "Grilled Salmon Steak",
+    "Sushi-Sashimi Combination",
+    "Salt & Pepper Shrimp",
+    "Nigiri selection",
+    "Chicken satay",
+    "Shrimp tempura",
+    "Spring rolls"
+  ],
   "guest_actions": {
-    "online_ordering": "Use the Order Online button on the website.",
+    "online_ordering": "Use the Order Online button on the Aziana website.",
     "reservations": "Use the Reserve a Table button, call Aziana, or send a WhatsApp message.",
-    "catering_events": "Ask for the event date, number of guests, budget, food preferences and contact details, then hand off to Aziana.",
-    "general_questions": "Use WhatsApp or email for direct guest inquiries."
+    "catering_events": "Ask for the event date, number of guests, preferred time, budget, food preferences, location needs and contact details, then hand off to Aziana.",
+    "general_questions": "Use WhatsApp or email for direct guest inquiries.",
+    "menu_pdf": "https://aziana.sx/menus/Marina_Menu_2026.pdf"
   },
-  "last_updated": "2026-06-22"
+  "routing_rules": [
+    {
+      "intent": "online_order",
+      "answer_mode": "direct",
+      "reply": "You can order online from the Aziana website using the Order Online button."
+    },
+    {
+      "intent": "reservation",
+      "answer_mode": "collect_and_handoff",
+      "fields": ["name", "date", "time", "party_size", "phone_or_whatsapp", "special_request"],
+      "reply": "I can help prepare your reservation request. Please share your name, date, time, number of guests and contact number."
+    },
+    {
+      "intent": "event_or_catering",
+      "answer_mode": "collect_and_handoff",
+      "fields": ["name", "event_date", "guest_count", "budget", "event_type", "food_preferences", "contact"],
+      "reply": "Aziana can help with private dinners, birthdays, weddings, corporate events and catering. Please share the date, guest count, budget and contact details so the team can follow up."
+    },
+    {
+      "intent": "complaint_or_refund",
+      "answer_mode": "handoff_required",
+      "reply": "I’m sorry about that. Please contact Aziana directly by WhatsApp or phone so the team can review the situation properly."
+    },
+    {
+      "intent": "allergy_or_dietary_restriction",
+      "answer_mode": "safe_handoff",
+      "reply": "Aziana has several seafood, sushi, meat and vegetable options, but allergy-sensitive orders should be confirmed directly with the restaurant before ordering."
+    }
+  ],
+  "qa": [
+    {
+      "id": "location_001",
+      "category": "location",
+      "questions": ["Where is Aziana located?", "Where are you?", "What is the address?", "Are you in Bobby's Marina?"],
+      "answer": "Aziana is located at Bobby's Marina, Juancho Yrausquin Boulevard #22, Philipsburg, Sint Maarten.",
+      "confidence": "high"
+    },
+    {
+      "id": "hours_001",
+      "category": "hours",
+      "questions": ["What are your opening hours?", "What time does the kitchen open?", "Are you open today?", "What time do you close?"],
+      "answer": "Aziana's kitchen hours are Monday to Saturday from 12:00 to 22:00. Sunday is listed as closed. The bar may continue after the kitchen has gone quiet.",
+      "confidence": "high"
+    },
+    {
+      "id": "contact_001",
+      "category": "contact",
+      "questions": ["How can I contact Aziana?", "What is your phone number?", "Do you have WhatsApp?", "What is your email?"],
+      "answer": "You can call Aziana at +1 (721) 542-6988, WhatsApp +1 (721) 588-0022, or email azianabv@gmail.com.",
+      "confidence": "high"
+    },
+    {
+      "id": "order_001",
+      "category": "online_ordering",
+      "questions": ["Can I order online?", "Do you have online ordering?", "How do I place an order?", "Can I order takeaway?"],
+      "answer": "Yes. Use the Order Online button on the Aziana website to start an order.",
+      "confidence": "high"
+    },
+    {
+      "id": "reservation_001",
+      "category": "reservations",
+      "questions": ["Can I reserve a table?", "Do you take reservations?", "How do I book a table?", "Can I make a reservation for tonight?"],
+      "answer": "Yes. Use the Reserve a Table button on the website, call Aziana, or send a WhatsApp message. For a reservation request, provide your name, date, time, number of guests and contact number.",
+      "confidence": "high"
+    },
+    {
+      "id": "cuisine_001",
+      "category": "menu",
+      "questions": ["What kind of food do you serve?", "Do you serve sushi?", "What cuisine is Aziana?", "Do you have Asian fusion?"],
+      "answer": "Aziana serves Asian fusion cuisine including sushi, sashimi, poke bowls, seafood, steaks, satay and Chinese-Indonesian specialties.",
+      "confidence": "high"
+    },
+    {
+      "id": "menu_001",
+      "category": "menu",
+      "questions": ["Where can I see the menu?", "Do you have a menu PDF?", "Can I download the menu?"],
+      "answer": "You can view the full menu PDF at https://aziana.sx/menus/Marina_Menu_2026.pdf or use the website's menu and online ordering buttons.",
+      "confidence": "high"
+    },
+    {
+      "id": "signature_001",
+      "category": "popular_items",
+      "questions": ["What are popular dishes?", "What should I order?", "What are your signature dishes?", "What do you recommend?"],
+      "answer": "Popular choices include Aziana's Snack Platter, Babi Pangang, Dragon Roll, Seared Tuna Steak, Rainbow Poke Bowl, Grilled Salmon Steak, Sushi-Sashimi Combination and Salt & Pepper Shrimp.",
+      "confidence": "medium"
+    },
+    {
+      "id": "sushi_001",
+      "category": "sushi",
+      "questions": ["Do you have sushi?", "Do you serve sashimi?", "Do you have nigiri?", "Do you have sushi platters?"],
+      "answer": "Yes. Aziana offers sushi, sashimi, nigiri selections, rolls and sushi-sashimi combination platters.",
+      "confidence": "high"
+    },
+    {
+      "id": "poke_001",
+      "category": "poke_bowls",
+      "questions": ["Do you have poke bowls?", "Do you serve poke?", "What poke bowls do you have?"],
+      "answer": "Yes. Aziana serves poke bowls, including options such as tofu, tuna, unagi and rainbow-style bowls depending on the current menu.",
+      "confidence": "medium"
+    },
+    {
+      "id": "grill_001",
+      "category": "grill",
+      "questions": ["Do you have steak?", "Do you serve seafood?", "Do you have grilled fish?", "Do you have salmon?"],
+      "answer": "Yes. Aziana's menu includes grilled options such as striploin, ribeye, grilled snapper, salmon, tuna and shrimp.",
+      "confidence": "high"
+    },
+    {
+      "id": "events_001",
+      "category": "events",
+      "questions": ["Do you host events?", "Can I book a private dinner?", "Do you do catering?", "Can you host a birthday or corporate event?"],
+      "answer": "Yes. Aziana handles private dinners, birthdays, weddings, corporate evenings, group gatherings and catering inquiries. Send the event date, guest count, budget, food preferences and contact details by email or WhatsApp.",
+      "confidence": "high"
+    },
+    {
+      "id": "parking_001",
+      "category": "parking",
+      "questions": ["Is there parking?", "Where can I park?", "Do you validate parking?"],
+      "answer": "Aziana is located at Bobby's Marina. Parking questions can change by marina policy, so guests should contact Aziana directly for the current parking and validation details.",
+      "confidence": "medium"
+    },
+    {
+      "id": "dietary_001",
+      "category": "dietary",
+      "questions": ["Do you have vegetarian options?", "Do you have gluten free food?", "Can you handle allergies?", "Do you have vegan options?"],
+      "answer": "Aziana has several seafood, sushi, meat and vegetable-based dishes, but allergy-sensitive or strict dietary requests should be confirmed directly with the restaurant before ordering.",
+      "confidence": "medium"
+    },
+    {
+      "id": "kids_001",
+      "category": "family",
+      "questions": ["Is Aziana family friendly?", "Can I bring children?", "Is it good for families?"],
+      "answer": "Aziana is suitable for family dinners, group meals and relaxed waterfront dining. For special seating needs, contact the restaurant directly.",
+      "confidence": "medium"
+    },
+    {
+      "id": "bar_001",
+      "category": "bar",
+      "questions": ["Do you have a bar?", "Do you serve cocktails?", "Can I come just for drinks?"],
+      "answer": "Yes. Aziana has a bar and lounge with cocktails, wine, aged rums, single malts and marina-side evening drinks.",
+      "confidence": "high"
+    },
+    {
+      "id": "waterfront_001",
+      "category": "ambience",
+      "questions": ["Is Aziana waterfront?", "Do you have marina views?", "Is there outdoor seating?"],
+      "answer": "Aziana is a waterfront restaurant at Bobby's Marina with marina-side dining atmosphere. For specific outdoor seating availability, contact the restaurant directly.",
+      "confidence": "high"
+    },
+    {
+      "id": "takeaway_001",
+      "category": "takeaway",
+      "questions": ["Do you do takeout?", "Can I pick up food?", "Can I order food to go?"],
+      "answer": "Yes. Use the online ordering button on the Aziana website or contact the restaurant for takeaway questions.",
+      "confidence": "high"
+    },
+    {
+      "id": "delivery_001",
+      "category": "delivery",
+      "questions": ["Do you deliver?", "Can I get delivery?", "What areas do you deliver to?"],
+      "answer": "Delivery availability and coverage can change. Please use the online ordering system or contact Aziana directly to confirm current delivery options.",
+      "confidence": "medium"
+    },
+    {
+      "id": "tourist_001",
+      "category": "tourists",
+      "questions": ["Is Aziana near the cruise port?", "Is Aziana good for tourists?", "Can we eat before or after a trip?"],
+      "answer": "Aziana is in Bobby's Marina in Philipsburg and is a strong choice for visitors looking for sushi, Asian fusion, seafood, steaks and waterfront dining near the marina.",
+      "confidence": "medium"
+    },
+    {
+      "id": "legacy_001",
+      "category": "story",
+      "questions": ["What is the story of Aziana?", "Was Aziana connected to Old Captain?", "How long has the restaurant been around?"],
+      "answer": "Aziana continues a family restaurant legacy connected to Old Captain, which introduced sushi and Chinese-Indonesian cooking in Philipsburg in 1995. Aziana continued that story at Bobby's Marina from 2018.",
+      "confidence": "high"
+    },
+    {
+      "id": "group_001",
+      "category": "groups",
+      "questions": ["Can you handle groups?", "Can I book for a large party?", "Can we have a group dinner?"],
+      "answer": "Yes. For groups, contact Aziana with the date, time, number of guests, preferred setup, menu preferences and budget so the team can confirm arrangements.",
+      "confidence": "high"
+    },
+    {
+      "id": "payment_001",
+      "category": "payment",
+      "questions": ["What payment methods do you accept?", "Do you accept cards?", "Can I pay cash?"],
+      "answer": "Payment options can change, so guests should confirm directly with Aziana for current accepted payment methods.",
+      "confidence": "low"
+    },
+    {
+      "id": "jobs_001",
+      "category": "jobs",
+      "questions": ["Are you hiring?", "Can I apply for a job?", "Do you need staff?"],
+      "answer": "For job inquiries, contact Aziana directly by email at azianabv@gmail.com or by WhatsApp with your name, experience and availability.",
+      "confidence": "medium"
+    },
+    {
+      "id": "complaint_001",
+      "category": "support",
+      "questions": ["I have a complaint", "My order was wrong", "I need help with an order", "Can I get a refund?"],
+      "answer": "I’m sorry about that. Please contact Aziana directly by phone or WhatsApp so the team can review the situation properly.",
+      "confidence": "high"
+    }
+  ],
+  "unknown_answer": "I do not have enough confirmed information to answer that safely. Please contact Aziana directly by WhatsApp at +1 (721) 588-0022, call +1 (721) 542-6988, or email azianabv@gmail.com."
 }
