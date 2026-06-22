@@ -1,0 +1,33 @@
+{
+  "version": "0.1.0",
+  "last_updated": "2026-06-22",
+  "purpose": "Food menu highlight seed data for future AIOS answers and website structured content. This is not a full live POS menu and should not be used for exact prices or live availability.",
+  "categories": [
+    {
+      "name": "Sushi and Sashimi",
+      "description": "Rolls, sashimi plates, nigiri selections and sushi-sashimi combinations.",
+      "items": ["Dragon Roll", "Sushi-Sashimi Combination", "Nigiri Selection", "Tuna Sushi Stack"]
+    },
+    {
+      "name": "Poke Bowls",
+      "description": "Fresh bowls with sushi-bar flavors, rice, vegetables and sauces.",
+      "items": ["Rainbow Poke Bowl", "Tuna Poke Bowl", "Tofu Poke Bowl", "Unagi Poke Bowl"]
+    },
+    {
+      "name": "Chinese-Indonesian Specialties",
+      "description": "Heritage dishes connected to the Old Captain family restaurant legacy.",
+      "items": ["Babi Pangang", "Satay", "Chinese-Indonesian Combos"]
+    },
+    {
+      "name": "Grill and Seafood",
+      "description": "Grilled seafood, steaks and East-meets-West plates.",
+      "items": ["Seared Tuna Steak", "Grilled Salmon Steak", "Grilled Snapper", "Ribeye", "Striploin", "Salt and Pepper Shrimp"]
+    },
+    {
+      "name": "Appetizers and Shareables",
+      "description": "Shareable snacks and starters for groups and marina evenings.",
+      "items": ["Aziana Snack Platter", "Chicken Satay", "Shrimp Tempura", "Spring Rolls", "Gyoza"]
+    }
+  ],
+  "disclaimer": "For exact menu availability and pricing, use the live online ordering system or contact Aziana directly."
+}
