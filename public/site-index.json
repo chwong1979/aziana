@@ -1,10 +1,12 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "last_updated": "2026-06-22",
   "site": "https://aziana.sx/",
   "pages": [
     {"url":"https://aziana.sx/","type":"homepage","title":"Aziana | Sushi & Asian Fusion in Philipsburg, Sint Maarten","intent":["brand","restaurant","online ordering","reservations","location"]},
     {"url":"https://aziana.sx/faq.html","type":"faq","title":"Aziana FAQ","intent":["hours","location","contact","reservations","ordering"]},
+    {"url":"https://aziana.sx/seasonal-campaigns.html","type":"automatic_campaign_hub","title":"Current Aziana Campaigns","intent":["seasonal campaigns","events","ordering","groups","takeout"]},
+    {"url":"https://aziana.sx/events-catering-sint-maarten.html","type":"conversion_landing_page","title":"Events and Catering in Sint Maarten","intent":["events","catering","groups","company dinners","private dining"]},
     {"url":"https://aziana.sx/sushi-philipsburg.html","type":"seo_landing_page","title":"Sushi in Philipsburg, Sint Maarten","intent":["sushi","sashimi","nigiri","poke bowls","Philipsburg"]},
     {"url":"https://aziana.sx/waterfront-restaurant-philipsburg.html","type":"seo_landing_page","title":"Waterfront Restaurant in Philipsburg","intent":["waterfront restaurant","Bobby's Marina","Philipsburg","dining"]},
     {"url":"https://aziana.sx/poke-bowls-sint-maarten.html","type":"seo_landing_page","title":"Poke Bowls in Sint Maarten","intent":["poke bowls","fresh lunch","sushi bowls","Sint Maarten"]},
@@ -14,6 +16,8 @@
     {"url":"https://aziana.sx/restaurant-near-cruise-port-philipsburg.html","type":"seo_landing_page","title":"Restaurant Near Philipsburg Cruise Port","intent":["visitors","Philipsburg restaurant","marina dining"]},
     {"url":"https://aziana.sx/family-group-dining-philipsburg.html","type":"seo_landing_page","title":"Family and Group Dining in Philipsburg","intent":["family dining","group dining","shared plates"]},
     {"url":"https://aziana.sx/menus/Marina_Menu_2026.pdf","type":"menu_pdf","title":"Aziana Marina Menu 2026","intent":["menu","prices","food choices"]},
+    {"url":"https://aziana.sx/site-data.json","type":"automation_data","title":"Aziana Shared Site Data","intent":["contact data","ordering IDs","inquiry templates","low maintenance"]},
+    {"url":"https://aziana.sx/campaign-config.json","type":"automation_data","title":"Aziana Campaign Configuration","intent":["campaign rotation","seasonal messages","low maintenance"]},
     {"url":"https://aziana.sx/menu-highlights.json","type":"aios_seed_data","title":"Aziana Menu Highlights","intent":["menu categories","popular items","AIOS food answers"]},
     {"url":"https://aziana.sx/ai-knowledge.json","type":"aios_seed_data","title":"Aziana AI Knowledge Base","intent":["AIOS","guest questions","routing rules","deterministic answers"]}
   ]
