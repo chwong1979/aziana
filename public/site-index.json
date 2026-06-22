@@ -1,0 +1,61 @@
+{
+  "version": "0.1.0",
+  "last_updated": "2026-06-22",
+  "site": "https://aziana.sx/",
+  "pages": [
+    {
+      "url": "https://aziana.sx/",
+      "type": "homepage",
+      "title": "Aziana | Sushi & Asian Fusion in Philipsburg, Sint Maarten",
+      "intent": ["brand", "restaurant", "online ordering", "reservations", "location"]
+    },
+    {
+      "url": "https://aziana.sx/faq.html",
+      "type": "faq",
+      "title": "Aziana FAQ",
+      "intent": ["hours", "location", "contact", "reservations", "ordering", "events"]
+    },
+    {
+      "url": "https://aziana.sx/sushi-philipsburg.html",
+      "type": "seo_landing_page",
+      "title": "Sushi in Philipsburg, Sint Maarten",
+      "intent": ["sushi", "sashimi", "nigiri", "poke bowls", "Philipsburg"]
+    },
+    {
+      "url": "https://aziana.sx/waterfront-restaurant-philipsburg.html",
+      "type": "seo_landing_page",
+      "title": "Waterfront Restaurant in Philipsburg",
+      "intent": ["waterfront restaurant", "Bobby's Marina", "Philipsburg", "dining"]
+    },
+    {
+      "url": "https://aziana.sx/poke-bowls-sint-maarten.html",
+      "type": "seo_landing_page",
+      "title": "Poke Bowls in Sint Maarten",
+      "intent": ["poke bowls", "fresh lunch", "sushi bowls", "Sint Maarten"]
+    },
+    {
+      "url": "https://aziana.sx/asian-fusion-sint-maarten.html",
+      "type": "seo_landing_page",
+      "title": "Asian Fusion Restaurant in Sint Maarten",
+      "intent": ["Asian fusion", "Chinese-Indonesian", "seafood", "steak", "sushi"]
+    },
+    {
+      "url": "https://aziana.sx/bar-lounge-philipsburg.html",
+      "type": "seo_landing_page",
+      "title": "Bar and Lounge in Philipsburg",
+      "intent": ["bar", "lounge", "cocktails", "wine", "marina evenings"]
+    },
+    {
+      "url": "https://aziana.sx/menus/Marina_Menu_2026.pdf",
+      "type": "menu_pdf",
+      "title": "Aziana Marina Menu 2026",
+      "intent": ["menu", "prices", "food choices"]
+    },
+    {
+      "url": "https://aziana.sx/ai-knowledge.json",
+      "type": "aios_seed_data",
+      "title": "Aziana AI Knowledge Base",
+      "intent": ["AIOS", "guest questions", "routing rules", "deterministic answers"]
+    }
+  ]
+}
