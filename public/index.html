@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aziana | Sushi & Asian Fusion in Philipsburg, Sint Maarten</title>
-  <meta name="description" content="Waterfront Asian fusion restaurant at Bobby's Marina, Philipsburg. Fresh sushi, seafood, steaks, poke bowls and Chinese-Indonesian specialties." />
+  <meta name="description" content="Waterfront Asian fusion restaurant at Bobby's Marina, Philipsburg. Fresh sushi, seafood, steaks, poke bowls, snack platters and Chinese-Indonesian specialties." />
   <link rel="canonical" href="https://aziana.sx/" />
   <link rel="icon" type="image/png" href="/Aziana_logo.png" />
   <meta name="robots" content="index, follow" />
@@ -20,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 
   <script type="application/ld+json">
   {
@@ -51,66 +52,43 @@
     ]
   }
   </script>
-
-  <style>
-    :root {
-      --ink:#0c0a0d; --ink2:#15121a; --panel:#1d1923; --purple:#7b0046; --purple2:#9b1968; --amber:#ef8b17; --bone:#f3ece0; --dim:#cac1c9; --muted:#877d8a; --line:rgba(243,236,224,.14);
-      --display:'Cormorant Garamond','Times New Roman',serif; --body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-    }
-    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth;overflow-x:hidden} body{background:var(--ink);color:var(--bone);font-family:var(--body);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden} img{max-width:100%;display:block} a{color:inherit;text-decoration:none} button{font:inherit} section{scroll-margin-top:5rem} :focus-visible{outline:2px solid var(--amber);outline-offset:4px}
-    .wrap{max-width:1220px;margin:auto;padding:0 clamp(1.25rem,4vw,3rem)}
-    .nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3rem);background:linear-gradient(180deg,rgba(12,10,13,.92),rgba(12,10,13,.35),transparent);backdrop-filter:blur(8px)}
-    .nav img{height:46px}.nav ul{list-style:none;display:flex;align-items:center;gap:2rem}.nav a,.nav span,.nav button{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);cursor:pointer}.nav a:hover,.nav span:hover,.nav button:hover{color:var(--amber)}.nav-cta{border:1px solid var(--amber);padding:.65rem 1.1rem;color:var(--amber)!important;background:transparent}.menu-toggle{display:none;width:46px;height:46px;border:1px solid var(--line);background:rgba(12,10,13,.72);color:var(--bone);align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer}.menu-toggle span{width:20px;height:1px;background:currentColor;transition:transform .25s ease,opacity .25s ease}.mobile-actions{display:none}
-    .hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding:9rem 0 5rem}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,13,.45),rgba(12,10,13,.9)),linear-gradient(90deg,rgba(44,5,39,.65),transparent),url('images/hero.jpg') center/cover;transform:scale(1.04)}.hero .wrap{position:relative;z-index:1}.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);font-weight:500;margin-bottom:1rem}.hero h1{font-family:var(--display);font-size:clamp(3rem,8vw,6rem);font-weight:300;line-height:1}.hero h1 em,.section-title em{color:var(--amber);font-style:italic}.hero p{font-family:var(--display);font-size:clamp(1.25rem,2vw,1.55rem);color:var(--dim);max-width:640px;margin:1.4rem 0}.tags{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}.tags span{color:var(--amber);margin:0 .35rem}
-    .btns{display:flex;gap:1rem;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.6rem;border:1px solid var(--amber);background:var(--amber);color:var(--ink);font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}.btn.secondary{background:transparent;color:var(--amber)}.proof{display:inline-flex;margin-top:1.7rem;color:var(--dim);font-size:.8rem;letter-spacing:.12em}.proof b{color:var(--amber);margin-right:.5rem}
-    section{padding:clamp(4rem,9vw,7rem) 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}.section-title{font-family:var(--display);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:300;line-height:1.1;margin:.8rem 0 1.2rem}.lede{font-family:var(--display);font-size:clamp(1.12rem,2vw,1.45rem);color:var(--dim);max-width:66ch}.prose{color:var(--dim);max-width:66ch}.prose p+p{margin-top:1rem}.photo{overflow:hidden;background:var(--panel);border:1px solid var(--line)}.photo img{width:100%;height:100%;object-fit:cover}.setting .photo{aspect-ratio:4/5}.dark{background:var(--ink2)}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}.card{background:linear-gradient(155deg,rgba(123,0,70,.18),rgba(29,25,35,.94));border:1px solid var(--line);padding:1.6rem;min-height:220px;display:flex;flex-direction:column;justify-content:end}.card.photo-card{padding:0;position:relative;overflow:hidden}.card.photo-card img{height:100%;width:100%;object-fit:cover;filter:brightness(.75)}.card.photo-card div{position:absolute;inset:auto 0 0;padding:1.4rem;background:linear-gradient(180deg,transparent,rgba(12,10,13,.94))}.card small{color:var(--amber);letter-spacing:.2em;text-transform:uppercase;font-size:.68rem}.card h3{font-family:var(--display);font-size:1.65rem;font-weight:400;margin:.5rem 0}.card p{color:var(--dim);font-family:var(--display);font-style:italic}.wide{grid-column:span 2}
-    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}.menu-item{border-top:1px solid var(--line);padding-top:1rem}.menu-item h3{font-family:var(--display);font-size:1.35rem;margin-bottom:.4rem}.menu-item p{color:var(--dim);font-size:.92rem}
-    .table-gallery{background:linear-gradient(180deg,var(--ink),#160f17)}.gallery-heading{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:2.5rem}.gallery-heading .lede{max-width:560px}.dining-gallery{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:300px 300px;gap:1rem}.venue-gallery{display:grid;grid-template-columns:1.35fr 1fr;gap:1rem;margin-top:1rem}.venue-gallery .gallery-card{aspect-ratio:16/8}.venue-gallery .private-dining{aspect-ratio:16/10}.gallery-card{position:relative;overflow:hidden;border:1px solid var(--line);background:var(--panel);isolation:isolate}.gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}.gallery-card:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(180deg,transparent,rgba(12,10,13,.86));z-index:1}.gallery-card:hover img{transform:scale(1.025)}.gallery-card figcaption{position:absolute;z-index:2;left:1.2rem;right:1.2rem;bottom:1rem}.gallery-card small{display:block;color:var(--amber);font-size:.65rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase}.gallery-card strong{display:block;margin-top:.25rem;font-family:var(--display);font-size:1.45rem;font-weight:400}.gallery-sushi{grid-column:1;grid-row:1}.gallery-poke{grid-column:2;grid-row:1/3}.gallery-platter{grid-column:1;grid-row:2}
-    .story{background:#2c0527;position:relative}.bar .photo{aspect-ratio:1}.events .gallery{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}.events figure{position:relative;overflow:hidden}.events img{aspect-ratio:4/3;object-fit:cover;width:100%;filter:brightness(.9)}.events figcaption{position:absolute;left:1rem;bottom:1rem;background:rgba(12,10,13,.75);border-left:2px solid var(--amber);padding:.45rem .8rem;text-transform:uppercase;letter-spacing:.2em;font-size:.7rem}
-    .visit-aerial{aspect-ratio:21/9;overflow:hidden;margin:2rem 0 3rem}.visit-aerial img{width:100%;height:100%;object-fit:cover}.info-block{margin-bottom:1.5rem}.label{display:block;color:var(--amber);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:.45rem}.content{font-family:var(--display);font-size:1.2rem;color:var(--bone)}.content a{border-bottom:1px solid var(--line)}.content a:hover{color:var(--amber)}.hours{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.5rem;font-family:var(--display);font-size:1.1rem}.hours span:nth-child(even){text-align:right}.map iframe{width:100%;min-height:420px;border:0;filter:invert(.92) hue-rotate(230deg) saturate(.55) brightness(.95)}
-    footer{border-top:1px solid var(--line);padding:3rem 0;background:var(--ink)}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem}.footer-grid img{height:54px;margin-bottom:1rem}.footer-grid h3{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem}.footer-grid ul{list-style:none}.footer-grid li{margin:.55rem 0}.footer-grid a,.footer-grid span,.footer-grid button{color:var(--dim);font-size:.9rem;cursor:pointer}.footer-action{padding:0;border:0;background:transparent}.bottom{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.78rem}
-    @media(max-width:850px){body{padding-bottom:68px}.wrap{padding-inline:1.2rem}.nav{padding:.75rem 1.2rem;background:rgba(12,10,13,.94);border-bottom:1px solid var(--line)}.nav img{height:40px}.menu-toggle{display:flex}.nav.open .menu-toggle span:first-child{transform:translateY(6px) rotate(45deg)}.nav.open .menu-toggle span:nth-child(2){opacity:0}.nav.open .menu-toggle span:last-child{transform:translateY(-6px) rotate(-45deg)}.nav ul{position:fixed;z-index:-1;top:65px;left:0;right:0;display:flex;align-items:stretch;flex-direction:column;gap:0;padding:.5rem 1.2rem 1.2rem;background:rgba(12,10,13,.98);border-bottom:1px solid var(--line);transform:translateY(-115%);opacity:0;visibility:hidden;transition:transform .25s ease,opacity .25s ease,visibility .25s}.nav.open ul{transform:translateY(0);opacity:1;visibility:visible}.nav li{border-bottom:1px solid var(--line)}.nav li:last-child{border:0;margin-top:.5rem}.nav ul a,.nav ul button{display:flex;width:100%;min-height:48px;align-items:center;background:transparent;border:0;color:var(--bone);text-align:left}.nav .nav-cta{justify-content:center;border:1px solid var(--amber);color:var(--amber)!important}.grid,.cards,.menu-grid,.events .gallery,.venue-gallery,.footer-grid{grid-template-columns:1fr}.wide{grid-column:auto}.hero{min-height:100svh;padding:7.5rem 0 3.5rem}.hero:before{background:linear-gradient(180deg,rgba(12,10,13,.38),rgba(12,10,13,.92)),linear-gradient(90deg,rgba(44,5,39,.55),transparent),url('images/hero-mobile.jpg') center/cover}.hero .wrap{width:100%;min-width:0}.hero h1{max-width:100%;font-size:clamp(2.35rem,11.5vw,3.15rem);line-height:1.02}.hero p{font-size:1.08rem;line-height:1.55;margin:1.1rem 0}.eyebrow{font-size:.65rem;letter-spacing:.22em}.tags{font-size:.68rem;line-height:1.9;letter-spacing:.16em;margin-bottom:1.4rem}.btns{display:grid;grid-template-columns:1fr}.btns .btn{width:100%;min-height:54px;justify-content:center;border-radius:0}.proof{font-size:.7rem;line-height:1.5;letter-spacing:.06em}.cards{gap:1rem}.card{min-height:260px}.setting .photo{aspect-ratio:4/3}.visit-aerial{aspect-ratio:4/3}.gallery-heading{display:block}.gallery-heading .lede{margin-top:1rem}.dining-gallery{grid-template-columns:1fr;grid-template-rows:none}.gallery-sushi,.gallery-poke,.gallery-platter{grid-column:auto;grid-row:auto;aspect-ratio:4/3}.gallery-poke{aspect-ratio:4/5}.venue-gallery .gallery-card,.venue-gallery .private-dining{aspect-ratio:4/3}.hours{font-size:1rem;gap:.45rem 1rem}.map iframe{min-height:320px}.bottom{padding-bottom:1rem}.mobile-actions{position:fixed;z-index:40;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr 1fr;height:68px;background:rgba(12,10,13,.98);border-top:1px solid var(--line);padding:7px}.mobile-actions a,.mobile-actions button{display:flex;align-items:center;justify-content:center;border:0;border-right:1px solid var(--line);background:transparent;color:var(--bone);font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}.mobile-actions button:first-child{background:var(--amber);color:var(--ink)}.mobile-actions a:last-child{border-right:0}}
-  </style>
 </head>
 <body>
   <nav class="nav" aria-label="Primary navigation">
     <a href="#top" aria-label="Aziana home"><img src="Aziana_logo.png" alt="Aziana logo" /></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-links" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
     <ul id="primary-links">
-      <li><a href="#setting">Setting</a></li>
       <li><a href="#cuisine">Cuisine</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#story">Story</a></li>
-      <li><a href="#bar">Bar</a></li>
-      <li><a href="#events">Events</a></li>
       <li><a href="#visit">Visit</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="sushi-philipsburg.html">Sushi</a></li>
       <li><button type="button" class="glf-button nav-cta" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order</button></li>
     </ul>
   </nav>
 
   <header class="hero" id="top">
-    <div class="wrap">
+    <div class="wrap hero-content">
       <div class="eyebrow">Bobby's Marina · Philipsburg</div>
       <h1>Sushi & Asian Fusion<br><em>on the waterfront.</em></h1>
-      <p>Aziana is a waterfront restaurant at Bobby's Marina in Philipsburg, Sint Maarten, serving fresh sushi, seafood, steaks, poke bowls and Chinese-Indonesian specialties.</p>
+      <p>Fresh sushi, seafood, steaks, poke bowls and Chinese-Indonesian specialties served at Aziana in Bobby's Marina, Sint Maarten.</p>
       <div class="tags">Sushi <span>·</span> Seafood <span>·</span> Steak <span>·</span> Satay <span>·</span> Poke Bowls</div>
       <div class="btns">
         <button type="button" class="glf-button btn" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order Online →</button>
         <button type="button" class="glf-button btn secondary" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0" data-glf-reservation="true">Reserve a Table →</button>
       </div>
-      <a class="proof" href="https://www.tripadvisor.com/Restaurant_Review-g147347-d15843803-Reviews-Aziana_BV-Philipsburg_Sint_Maarten_St_Martin_St_Maarten.html" target="_blank" rel="noopener"><b>★★★★½</b> 4.5 · Travelers' Choice on Tripadvisor</a>
+      <a class="proof" href="https://www.tripadvisor.com/Restaurant_Review-g147347-d15843803-Reviews-Aziana_BV-Philipsburg_Sint_Maarten_St_Martin_St_Maarten.html" target="_blank" rel="noopener"><b>★★★★½</b> Travelers' Choice on Tripadvisor</a>
     </div>
   </header>
 
   <section id="setting" class="setting">
     <div class="wrap grid">
-      <div class="photo"><img src="images/setting.jpg" alt="Waterfront dining room at Aziana restaurant in Bobby's Marina, Philipsburg, Sint Maarten" loading="lazy"></div>
+      <div class="photo"><img src="images/setting.jpg" alt="Waterfront dining room at Aziana restaurant in Bobby's Marina, Philipsburg" loading="lazy"></div>
       <div>
         <div class="eyebrow">Waterfront Restaurant in Philipsburg</div>
         <h2 class="section-title">Inside, with the <em>bay just beyond.</em></h2>
-        <p class="lede">A wood-beamed dining room with photographs of old Philipsburg, open to the marina beyond its windows and especially beautiful as the sun lowers over the bay.</p>
-        <p class="prose">Aziana is a strong choice for pre- or post-trip dining, business lunches, family dinners, and relaxed evenings near the marina.</p>
+        <p class="lede">A wood-beamed dining room with the marina just beyond the windows, made for sushi lunches, family dinners, group meals and relaxed evenings.</p>
+        <p class="prose">Aziana is a strong choice before or after a trip, for visitors in Philipsburg, and for locals looking for sushi, seafood, steak and Asian fusion dishes near the marina.</p>
       </div>
     </div>
   </section>
@@ -119,60 +97,42 @@
     <div class="wrap">
       <div class="eyebrow">Sushi, Seafood & Chinese-Indonesian Cuisine</div>
       <h2 class="section-title">Worth ordering, <em>worth remembering.</em></h2>
-      <p class="lede">Sushi cut to order, fresh seafood, steaks from the grill and Chinese-Indonesian dishes our kitchen has cooked since 1995.</p>
+      <p class="lede">Sushi cut to order, poke bowls, fresh seafood, grill favorites and Chinese-Indonesian dishes connected to a Philipsburg family restaurant legacy.</p>
       <div class="cards">
-        <article class="card photo-card wide"><img src="images/dish-snack-platter.jpg" alt="Aziana snack platter with chicken satay, shrimp, spring rolls and house sauces" width="1600" height="1066" loading="eager" decoding="async"><div><small>House signature</small><h3>Aziana's Snack Platter</h3><p>Chicken wings, shrimp tempura, fried mussels, chicken satay and vegetarian spring rolls with sweet chili and peanut sauces.</p></div></article>
-        <article class="card photo-card"><img src="images/gallery-babi-pangang.jpg" alt="Babi Pangang in red sweet-and-sour sauce served with white rice and greens at Aziana" width="1600" height="777" loading="eager" decoding="async"><div><small>Heritage plate</small><h3>Babi Pangang</h3><p>A Chinese-Indonesian classic connected to the Old Captain legacy.</p></div></article>
-        <article class="card photo-card"><img src="images/dish-dragon-roll.jpg" alt="Dragon roll sushi with tempura shrimp, avocado, spicy mayo and tobiko at Aziana in Philipsburg" loading="lazy"><div><small>Sushi favorite</small><h3>Dragon Roll</h3><p>Tempura shrimp and cucumber, topped with avocado, spicy mayo and tobiko.</p></div></article>
-        <article class="card photo-card"><img src="images/dish-seared-tuna.jpg" alt="Seared tuna steak with sesame, ginger and wasabi at Aziana waterfront restaurant" width="1344" height="896" loading="eager" decoding="async"><div><small>East meets west</small><h3>Seared Tuna Steak</h3><p>Sesame-coated, seared rare, served with ginger and wasabi.</p></div></article>
-        <article class="card"><small>From the sushi bar</small><h3>Rainbow Poke Bowl</h3><p>Salmon, tuna and snapper over rice with cucumber, avocado, wakame and tobiko.</p></article>
-        <article class="card photo-card"><img src="images/dish-grilled-salmon.jpg" alt="Grilled salmon steak with butter garlic or pesto sauce at Aziana" loading="lazy"><div><small>From the grill</small><h3>Grilled Salmon Steak</h3><p>Butter-garlic or pesto, served with seasonal vegetables.</p></div></article>
-        <article class="card photo-card wide"><img src="images/dish-sashimi-combo.jpg" alt="Sushi and sashimi combination platter with tuna, salmon, eel, snapper, shrimp and California rolls" loading="lazy"><div><small>For the table</small><h3>Sushi-Sashimi Combination</h3><p>Sushi and sashimi, plated together and built to share.</p></div></article>
+        <article class="card photo-card wide"><img src="images/dish-snack-platter.jpg" alt="Aziana snack platter with chicken satay, shrimp, spring rolls and house sauces" loading="lazy"><div><small>House signature</small><h3>Aziana's Snack Platter</h3><p>Shareable favorites for the table.</p></div></article>
+        <article class="card photo-card"><img src="images/gallery-babi-pangang.jpg" alt="Babi Pangang in red sweet-and-sour sauce served with rice" loading="lazy"><div><small>Heritage plate</small><h3>Babi Pangang</h3><p>A Chinese-Indonesian classic.</p></div></article>
+        <article class="card photo-card"><img src="images/dish-dragon-roll.jpg" alt="Dragon roll sushi with tempura shrimp and avocado" loading="lazy"><div><small>Sushi favorite</small><h3>Dragon Roll</h3><p>Tempura shrimp, avocado, spicy mayo and tobiko.</p></div></article>
+        <article class="card photo-card"><img src="images/dish-seared-tuna.jpg" alt="Seared tuna steak with sesame, ginger and wasabi" loading="lazy"><div><small>East meets west</small><h3>Seared Tuna Steak</h3><p>Sesame-coated and seared rare.</p></div></article>
+        <article class="card"><small>From the sushi bar</small><h3>Rainbow Poke Bowl</h3><p>Fresh sushi-bar ingredients over rice with vegetables and sauces.</p></article>
+        <article class="card photo-card"><img src="images/dish-grilled-salmon.jpg" alt="Grilled salmon steak at Aziana" loading="lazy"><div><small>From the grill</small><h3>Grilled Salmon Steak</h3><p>Seafood and grill flavors near the marina.</p></div></article>
+        <article class="card photo-card wide"><img src="images/dish-sashimi-combo.jpg" alt="Sushi and sashimi combination platter" loading="lazy"><div><small>For the table</small><h3>Sushi-Sashimi Combination</h3><p>Built to share.</p></div></article>
       </div>
       <div class="menu-grid">
-        <div class="menu-item"><h3>Sushi & Sashimi</h3><p>Rolls, nigiri, sashimi plates and combination platters.</p></div>
-        <div class="menu-item"><h3>Poke Bowls</h3><p>From tofu and tuna to unagi and rainbow bowls.</p></div>
-        <div class="menu-item"><h3>Chinese-Indonesian</h3><p>Babi pangang, foe yung, nasi combos, teriyaki and sweet chili dishes.</p></div>
-        <div class="menu-item"><h3>From the Grill</h3><p>Striploin, ribeye, grilled snapper, salmon, tuna and shrimp.</p></div>
-        <div class="menu-item"><h3>Appetizers & Salads</h3><p>Samosas, satay, spring rolls, tempura, gyoza and fresh salads.</p></div>
-        <div class="menu-item"><h3>Snack Platters</h3><p>Shareable platters for groups, drinks and marina evenings.</p></div>
+        <a class="menu-item" href="sushi-philipsburg.html"><h3>Sushi & Sashimi</h3><p>Rolls, nigiri, sashimi plates and combination platters.</p></a>
+        <a class="menu-item" href="poke-bowls-sint-maarten.html"><h3>Poke Bowls</h3><p>Fresh bowls with sushi-bar flavors.</p></a>
+        <a class="menu-item" href="asian-fusion-sint-maarten.html"><h3>Asian Fusion</h3><p>Chinese-Indonesian dishes, satay, seafood and grill items.</p></a>
+        <a class="menu-item" href="waterfront-restaurant-philipsburg.html"><h3>Waterfront Dining</h3><p>Marina-side dining in Philipsburg.</p></a>
+        <a class="menu-item" href="takeout-online-ordering-sint-maarten.html"><h3>Takeout & Ordering</h3><p>Order online for pickup and easy meals.</p></a>
+        <a class="menu-item" href="family-group-dining-philipsburg.html"><h3>Family & Groups</h3><p>Shared plates, sushi combinations and group meals.</p></a>
       </div>
-      <p style="margin-top:2rem"><a class="btn" href="menus/Marina_Menu_2026.pdf" target="_blank" rel="noopener">Download Full Menu PDF →</a></p>
+      <p class="menu-link"><a class="btn" href="menus/Marina_Menu_2026.pdf" target="_blank" rel="noopener">Download Full Menu PDF →</a></p>
     </div>
   </section>
 
   <section id="gallery" class="table-gallery">
     <div class="wrap">
       <div class="gallery-heading">
-        <div>
-          <div class="eyebrow">At the Table</div>
-          <h2 class="section-title">Fresh from our kitchen, <em>made to share.</em></h2>
-        </div>
-        <p class="lede">Colorful rolls, generous bowls, shareable plates and something cold from the bar—served with the marina just beyond the table.</p>
+        <div><div class="eyebrow">At the Table</div><h2 class="section-title">Fresh from our kitchen, <em>made to share.</em></h2></div>
+        <p class="lede">Colorful rolls, generous bowls, shareable plates and marina evenings.</p>
       </div>
       <div class="dining-gallery">
-        <figure class="gallery-card gallery-sushi">
-          <img src="images/gallery-salt-pepper-shrimp.jpg" alt="Salt and pepper shrimp served with rice and vegetables at Aziana" width="1600" height="1066" loading="eager" decoding="async">
-          <figcaption><small>From the kitchen</small><strong>Salt &amp; Pepper Shrimp</strong></figcaption>
-        </figure>
-        <figure class="gallery-card gallery-poke">
-          <img src="images/gallery-tuna-sushi-stack.webp" alt="Tuna sushi stack with avocado, mango, tobiko and sashimi roses at Aziana" width="827" height="1024" loading="lazy" decoding="async">
-          <figcaption><small>Layered &amp; fresh</small><strong>Tuna Sushi Stack</strong></figcaption>
-        </figure>
-        <figure class="gallery-card gallery-platter">
-          <img src="images/gallery-nigiri-selection.jpg" alt="Salmon, tuna, shrimp and eel nigiri selection served at Aziana" width="1024" height="683" loading="lazy" decoding="async">
-          <figcaption><small>From the sushi bar</small><strong>Nigiri Selection</strong></figcaption>
-        </figure>
+        <figure class="gallery-card gallery-sushi"><img src="images/gallery-salt-pepper-shrimp.jpg" alt="Salt and pepper shrimp served with rice and vegetables at Aziana" loading="lazy"><figcaption><small>From the kitchen</small><strong>Salt &amp; Pepper Shrimp</strong></figcaption></figure>
+        <figure class="gallery-card gallery-poke"><img src="images/gallery-tuna-sushi-stack.webp" alt="Tuna sushi stack with avocado, mango and sashimi roses" loading="lazy"><figcaption><small>Layered &amp; fresh</small><strong>Tuna Sushi Stack</strong></figcaption></figure>
+        <figure class="gallery-card gallery-platter"><img src="images/gallery-nigiri-selection.jpg" alt="Nigiri selection served at Aziana" loading="lazy"><figcaption><small>From the sushi bar</small><strong>Nigiri Selection</strong></figcaption></figure>
       </div>
       <div class="venue-gallery" aria-label="Aziana waterfront and private dining spaces">
-        <figure class="gallery-card waterfront-night">
-          <img src="images/gallery-waterfront-night.webp" alt="Aziana's waterfront dining room glowing at night beside Bobby's Marina" width="1024" height="437" loading="lazy" decoding="async">
-          <figcaption><small>On the marina</small><strong>Waterfront Evenings</strong></figcaption>
-        </figure>
-        <figure class="gallery-card private-dining">
-          <img src="images/gallery-private-dining.webp" alt="Aziana private dining room prepared for a group dinner overlooking the marina" width="1024" height="768" loading="lazy" decoding="async">
-          <figcaption><small>Gather together</small><strong>Private Dining</strong></figcaption>
-        </figure>
+        <figure class="gallery-card waterfront-night"><img src="images/gallery-waterfront-night.webp" alt="Aziana waterfront dining room glowing at night beside Bobby's Marina" loading="lazy"><figcaption><small>On the marina</small><strong>Waterfront Evenings</strong></figcaption></figure>
+        <figure class="gallery-card private-dining"><img src="images/gallery-private-dining.webp" alt="Aziana private dining room prepared for a group dinner" loading="lazy"><figcaption><small>Gather together</small><strong>Private Dining</strong></figcaption></figure>
       </div>
     </div>
   </section>
@@ -182,24 +142,16 @@
       <div>
         <div class="eyebrow">Our Story</div>
         <h2 class="section-title">A legacy <em>continued.</em></h2>
-        <div class="prose">
-          <p>In 1995, Molly and Mario opened Old Captain in Great Bay, Philipsburg, and quietly introduced sushi and Chinese-Indonesian cooking to an island that had seen neither.</p>
-          <p>The work continued through the restaurants that followed, and in 2018 it continued again at Bobby's Marina under the name Aziana.</p>
-          <p>To dine here is to step into that legacy and add a chapter to it.</p>
-        </div>
+        <div class="prose"><p>In 1995, Molly and Mario opened Old Captain in Great Bay, Philipsburg, and introduced sushi and Chinese-Indonesian cooking to an island that had seen neither.</p><p>The work continued through the restaurants that followed, and in 2018 it continued again at Bobby's Marina under the name Aziana.</p></div>
       </div>
-      <div class="photo"><img src="images/story.jpg" alt="Old Captain postcard from the original Philipsburg restaurant connected to Aziana's family story" loading="lazy"></div>
+      <div class="photo"><img src="images/story.jpg" alt="Old Captain postcard connected to Aziana's family story" loading="lazy"></div>
     </div>
   </section>
 
   <section id="bar" class="bar dark">
     <div class="wrap grid">
-      <div class="photo"><img src="images/bar.jpg" alt="Aziana bar and lounge at night in Bobby's Marina, Philipsburg" loading="lazy"></div>
-      <div>
-        <div class="eyebrow">Bar & Lounge</div>
-        <h2 class="section-title">An oasis at <em>the marina.</em></h2>
-        <p class="lede">Cocktails mixed properly, a short wine list, aged rums, single malts and a bar that continues after the kitchen has gone quiet.</p>
-      </div>
+      <div class="photo"><img src="images/bar.jpg" alt="Aziana bar and lounge at night in Bobby's Marina" loading="lazy"></div>
+      <div><div class="eyebrow">Bar & Lounge</div><h2 class="section-title">An oasis at <em>the marina.</em></h2><p class="lede">A relaxed bar and lounge for drinks before dinner, after dinner or during a waterfront evening in Philipsburg.</p><p class="prose"><a href="bar-lounge-philipsburg.html">Learn more about the bar and lounge →</a></p></div>
     </div>
   </section>
 
@@ -207,12 +159,9 @@
     <div class="wrap">
       <div class="eyebrow">Events & Catering</div>
       <h2 class="section-title">Occasions worth <em>remembering.</em></h2>
-      <p class="lede">Weddings, birthdays, corporate evenings and private gatherings at the table, on the porch or on the square outside.</p>
-      <p style="margin-top:1.5rem"><a class="btn" href="mailto:azianabv@gmail.com?subject=Events%20%26%20Catering%20Inquiry">Inquire →</a></p>
-      <div class="gallery">
-        <figure><img src="images/events.jpg" alt="Private event indoors at Aziana with purple uplighting and marina views" loading="lazy"><figcaption>Inside</figcaption></figure>
-        <figure><img src="images/events-square.jpg" alt="Daytime gathering on the marina square outside Aziana in Philipsburg" loading="lazy"><figcaption>On the square</figcaption></figure>
-      </div>
+      <p class="lede">Birthdays, company dinners, group evenings and private gatherings at the table, on the porch or near the marina.</p>
+      <p class="menu-link"><a class="btn" href="mailto:azianabv@gmail.com?subject=Events%20%26%20Catering%20Inquiry">Inquire →</a></p>
+      <div class="gallery"><figure><img src="images/events.jpg" alt="Private event indoors at Aziana with marina views" loading="lazy"><figcaption>Inside</figcaption></figure><figure><img src="images/events-square.jpg" alt="Daytime gathering on the marina square outside Aziana" loading="lazy"><figcaption>On the square</figcaption></figure></div>
     </div>
   </section>
 
@@ -225,7 +174,7 @@
         <div>
           <div class="info-block"><span class="label">Address</span><div class="content">Aziana, at Bobby's Marina<br>Juancho Yrausquin Boulevard #22<br>Philipsburg, Sint Maarten</div></div>
           <div class="info-block"><span class="label">Contact</span><div class="content"><a href="tel:+17215426988">+1 (721) 542-6988</a><br><a href="https://wa.me/17215880022" target="_blank" rel="noopener">WhatsApp +1 (721) 588-0022</a><br><a href="mailto:azianabv@gmail.com">azianabv@gmail.com</a></div></div>
-          <div class="info-block"><span class="label">Kitchen Hours</span><div class="hours"><span>Monday</span><span>12:00 - 22:00</span><span>Tuesday</span><span>12:00 - 22:00</span><span>Wednesday</span><span>12:00 - 22:00</span><span>Thursday</span><span>12:00 - 22:00</span><span>Friday</span><span>12:00 - 22:00</span><span>Saturday</span><span>12:00 - 22:00</span><span>Sunday</span><span>Closed</span></div><p class="prose" style="margin-top:1rem">The bar continues until late.</p></div>
+          <div class="info-block"><span class="label">Kitchen Hours</span><div class="hours"><span>Monday</span><span>12:00 - 22:00</span><span>Tuesday</span><span>12:00 - 22:00</span><span>Wednesday</span><span>12:00 - 22:00</span><span>Thursday</span><span>12:00 - 22:00</span><span>Friday</span><span>12:00 - 22:00</span><span>Saturday</span><span>12:00 - 22:00</span><span>Sunday</span><span>Closed</span></div><p class="prose hours-note">The bar may continue later. Contact Aziana for same-day questions.</p></div>
         </div>
         <div class="map"><iframe src="https://maps.google.com/maps?q=Aziana+BV+Bobby%27s+Marina+Philipsburg&t=&z=18&ie=UTF8&iwloc=&output=embed" title="Aziana location map at Bobby's Marina, Philipsburg" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       </div>
@@ -235,12 +184,12 @@
   <footer>
     <div class="wrap">
       <div class="footer-grid">
-        <div><img src="Aziana_logo.png" alt="Aziana logo"><p class="prose">Asian fusion on the waterfront. A culinary sanctuary at Bobby's Marina.</p></div>
-        <div><h3>Explore</h3><ul><li><a href="#setting">The Setting</a></li><li><a href="#cuisine">The Cuisine</a></li><li><a href="#story">Our Story</a></li><li><a href="#bar">Bar & Lounge</a></li><li><a href="#events">Events</a></li></ul></div>
-        <div><h3>Contact</h3><ul><li><a href="tel:+17215426988">+1 (721) 542-6988</a></li><li><a href="https://wa.me/17215880022" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:azianabv@gmail.com">azianabv@gmail.com</a></li><li><a href="#visit">Find Us</a></li></ul></div>
-        <div><h3>Follow</h3><ul><li><a href="https://www.facebook.com/azianasxm/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/azianabv/?hl=en" target="_blank" rel="noopener">Instagram</a></li><li><button type="button" class="glf-button footer-action" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order Online</button></li></ul></div>
+        <div><img src="Aziana_logo.png" alt="Aziana logo"><p class="prose">Asian fusion on the waterfront at Bobby's Marina, Philipsburg.</p></div>
+        <div><h3>Explore</h3><ul><li><a href="#cuisine">Cuisine</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#visit">Visit</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+        <div><h3>Popular</h3><ul><li><a href="sushi-philipsburg.html">Sushi in Philipsburg</a></li><li><a href="waterfront-restaurant-philipsburg.html">Waterfront Restaurant</a></li><li><a href="poke-bowls-sint-maarten.html">Poke Bowls</a></li><li><a href="takeout-online-ordering-sint-maarten.html">Takeout & Ordering</a></li></ul></div>
+        <div><h3>Contact</h3><ul><li><a href="tel:+17215426988">+1 (721) 542-6988</a></li><li><a href="https://wa.me/17215880022" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:azianabv@gmail.com">azianabv@gmail.com</a></li><li><button type="button" class="glf-button footer-action" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order Online</button></li></ul></div>
       </div>
-      <div class="bottom"><span>© 2018 - <span id="copyYear">2026</span> Aziana BV · Philipsburg, Sint Maarten</span></div>
+      <div class="bottom"><span>© 2018 - <span id="copyYear">2026</span> Aziana BV · Philipsburg, Sint Maarten</span><span><a href="llms.txt">AI info</a> · <a href="sitemap.xml">Sitemap</a></span></div>
     </div>
   </footer>
 
@@ -258,7 +207,6 @@
     const closeMenu=()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu')};
     toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu')});
     nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
-    document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
   </script>
 </body>
 </html>
