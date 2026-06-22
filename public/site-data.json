@@ -1,0 +1,27 @@
+{
+  "business": {
+    "name": "Aziana",
+    "legalName": "Aziana BV",
+    "email": "azianabv@gmail.com",
+    "phone": "+1 (721) 542-6988",
+    "phoneHref": "tel:+17215426988",
+    "whatsapp": "+1 (721) 588-0022",
+    "whatsappHref": "https://wa.me/17215880022",
+    "addressHtml": "Aziana, at Bobby's Marina<br>Juancho Yrausquin Boulevard #22<br>Philipsburg, Sint Maarten",
+    "menuPdf": "/menus/Marina_Menu_2026.pdf",
+    "orderCuid": "c11d4461-f717-4a32-a283-2b5b37a6b8ab",
+    "orderRuid": "d4a3dc0d-10df-4722-949d-2840815cf5e0"
+  },
+  "hours": {
+    "kitchen": {
+      "Monday": "12:00 - 22:00",
+      "Tuesday": "12:00 - 22:00",
+      "Wednesday": "12:00 - 22:00",
+      "Thursday": "12:00 - 22:00",
+      "Friday": "12:00 - 22:00",
+      "Saturday": "12:00 - 22:00",
+      "Sunday": "Closed"
+    },
+    "note": "The bar may continue later. Contact Aziana for same-day questions."
+  }
+}
