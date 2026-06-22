@@ -23,5 +23,10 @@
       "Sunday": "Closed"
     },
     "note": "The bar may continue later. Contact Aziana for same-day questions."
+  },
+  "inquiryTemplates": {
+    "generalWhatsApp": "Hi Aziana, I have a question.",
+    "eventWhatsApp": "Hi Aziana, I would like to ask about an event or group dinner. Date:  Guests:  Budget:  Preferred food:  Contact name: ",
+    "eventEmailBody": "Event date:\nGuest count:\nPreferred time:\nBudget:\nFood preferences:\nEvent type:\nContact name:\nContact number:"
   }
 }
