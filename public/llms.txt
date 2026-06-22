@@ -6,10 +6,13 @@ Aziana is a waterfront Asian fusion restaurant and bar at Bobby's Marina in Phil
 
 - Homepage: https://aziana.sx/
 - FAQ: https://aziana.sx/faq.html
+- Events and catering: https://aziana.sx/events-catering-sint-maarten.html
 - Menu PDF: https://aziana.sx/menus/Marina_Menu_2026.pdf
 - AI knowledge seed: https://aziana.sx/ai-knowledge.json
 - Menu highlights: https://aziana.sx/menu-highlights.json
 - Site index: https://aziana.sx/site-index.json
+- Shared business data: https://aziana.sx/site-data.json
+- Campaign schedule: https://aziana.sx/campaign-config.json
 
 ## SEO landing pages
 
@@ -28,7 +31,9 @@ Aziana serves sushi, sashimi, poke bowls, seafood, steaks, satay, snack platters
 
 Kitchen hours listed on the website are Monday to Saturday from 12:00 to 22:00. Sunday is listed as closed.
 
-For time-sensitive guest requests such as same-day reservations, delivery availability, allergy-sensitive orders, quotes, complaints or special arrangements, route guests to Aziana directly instead of inventing availability.
+## Automation note
+
+The website now includes shared data files for lower-maintenance updates. General business details live in /site-data.json. Campaign visibility lives in /campaign-config.json. The shared /site-automation.js script updates years, action buttons, contact blocks, simple click tracking events and relevant campaign cards on pages that include it.
 
 ## Common guest actions
 
@@ -36,7 +41,3 @@ For time-sensitive guest requests such as same-day reservations, delivery availa
 - Reserve a table: use the Reserve a Table button on the website or contact Aziana directly.
 - Group inquiries: collect date, guest count, budget, food preferences and contact details.
 - General inquiries: contact Aziana by phone, WhatsApp or email from the website.
-
-## AIOS note
-
-The file /ai-knowledge.json is a seed database for a future AIOS-powered Aziana assistant. It contains intent routing, common questions, answer confidence levels and safe handoff rules.
