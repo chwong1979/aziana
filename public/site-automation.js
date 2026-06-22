@@ -1,4 +1,5 @@
 (() => {
+  const ODARIUS_GA4_MEASUREMENT_ID = 'G-8EXGF5H9C4';
   const today = new Date();
   const todayISO = today.toISOString().slice(0, 10);
   const monthDay = todayISO.slice(5);
@@ -18,17 +19,18 @@
   const encode = (value) => encodeURIComponent(value || '');
 
   const loadGoogleAnalytics = (siteData) => {
-    const id = siteData?.analytics?.googleMeasurementId;
-    if (!id || window.__azianaGoogleAnalyticsLoaded) return;
+    const siteId = siteData?.analytics?.googleMeasurementId;
+    const ids = Array.from(new Set([siteId, ODARIUS_GA4_MEASUREMENT_ID].filter(Boolean)));
+    if (!ids.length || window.__azianaGoogleAnalyticsLoaded) return;
     window.__azianaGoogleAnalyticsLoaded = true;
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
-    window.gtag('config', id, { send_page_view: true });
+    ids.forEach(id => window.gtag('config', id, { send_page_view: true }));
 
     const script = document.createElement('script');
     script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ids[0])}`;
     document.head.appendChild(script);
   };
 
