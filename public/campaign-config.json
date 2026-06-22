@@ -1,12 +1,14 @@
 {
   "lastUpdated": "2026-06-22",
+  "maintenanceNote": "Campaigns with annual=true rotate every year by month and day. Edit this file only when Aziana wants to add, remove, or change a campaign theme.",
   "campaigns": [
     {
       "id": "events-catering",
       "title": "Events and Catering",
       "season": "evergreen",
-      "showFrom": "2026-01-01",
-      "showUntil": "2026-12-31",
+      "annual": true,
+      "showFromMonthDay": "01-01",
+      "showUntilMonthDay": "12-31",
       "summary": "Private dinners, company meals, group dinners, sushi platters and snack platters at Bobby's Marina.",
       "href": "/events-catering-sint-maarten.html",
       "tags": ["groups", "events", "family-group-dining-philipsburg", "bar-lounge-philipsburg", "waterfront-restaurant-philipsburg"]
@@ -15,31 +17,45 @@
       "id": "sushi-takeout",
       "title": "Sushi and Takeout",
       "season": "evergreen",
-      "showFrom": "2026-01-01",
-      "showUntil": "2026-12-31",
+      "annual": true,
+      "showFromMonthDay": "01-01",
+      "showUntilMonthDay": "12-31",
       "summary": "Order sushi, poke bowls, snack platters and Asian fusion favorites online for pickup.",
       "href": "/takeout-online-ordering-sint-maarten.html",
       "tags": ["sushi-philipsburg", "poke-bowls-sint-maarten", "takeout-online-ordering-sint-maarten"]
     },
     {
-      "id": "visitor-lunch",
+      "id": "visitor-stop",
       "title": "Philipsburg Visitor Stop",
       "season": "high-season",
-      "showFrom": "2026-10-01",
-      "showUntil": "2027-04-30",
-      "summary": "A useful waterfront stop near Bobby's Marina for visitors, boat trips and Philipsburg plans.",
+      "annual": true,
+      "showFromMonthDay": "10-01",
+      "showUntilMonthDay": "04-30",
+      "summary": "A waterfront stop near Bobby's Marina for visitors, boat trips and Philipsburg plans.",
       "href": "/restaurant-near-cruise-port-philipsburg.html",
       "tags": ["restaurant-near-cruise-port-philipsburg", "waterfront-restaurant-philipsburg"]
     },
     {
-      "id": "company-dinners",
+      "id": "company-groups",
       "title": "Company Dinners and Groups",
       "season": "holiday-season",
-      "showFrom": "2026-10-15",
-      "showUntil": "2026-12-31",
+      "annual": true,
+      "showFromMonthDay": "10-15",
+      "showUntilMonthDay": "12-31",
       "summary": "Plan year-end dinners and group meals with shared plates, sushi, seafood and Asian fusion dishes.",
       "href": "/events-catering-sint-maarten.html",
       "tags": ["events", "groups", "family-group-dining-philipsburg"]
+    },
+    {
+      "id": "summer-groups",
+      "title": "Easy Group Dining",
+      "season": "summer",
+      "annual": true,
+      "showFromMonthDay": "05-01",
+      "showUntilMonthDay": "09-30",
+      "summary": "Shared plates, sushi combinations and relaxed marina dining for locals, families and groups.",
+      "href": "/family-group-dining-philipsburg.html",
+      "tags": ["family-group-dining-philipsburg", "events", "waterfront-restaurant-philipsburg"]
     }
   ]
 }
