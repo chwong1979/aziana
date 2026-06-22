@@ -1,0 +1,29 @@
+{
+  "business": {
+    "name": "Aziana",
+    "type": "Waterfront Asian fusion restaurant and bar",
+    "location": "Bobby's Marina, Juancho Yrausquin Boulevard #22, Philipsburg, Sint Maarten",
+    "website": "https://aziana.sx/",
+    "phone": "+1 (721) 542-6988",
+    "whatsapp": "+1 (721) 588-0022",
+    "email": "azianabv@gmail.com"
+  },
+  "hours": {
+    "monday": "12:00 - 22:00",
+    "tuesday": "12:00 - 22:00",
+    "wednesday": "12:00 - 22:00",
+    "thursday": "12:00 - 22:00",
+    "friday": "12:00 - 22:00",
+    "saturday": "12:00 - 22:00",
+    "sunday": "Closed"
+  },
+  "cuisine": ["Sushi", "Sashimi", "Poke bowls", "Seafood", "Steak", "Satay", "Chinese-Indonesian specialties", "Asian fusion"],
+  "popular_items": ["Aziana's Snack Platter", "Babi Pangang", "Dragon Roll", "Seared Tuna Steak", "Rainbow Poke Bowl", "Grilled Salmon Steak", "Sushi-Sashimi Combination", "Salt & Pepper Shrimp"],
+  "guest_actions": {
+    "online_ordering": "Use the Order Online button on the website.",
+    "reservations": "Use the Reserve a Table button, call Aziana, or send a WhatsApp message.",
+    "catering_events": "Ask for the event date, number of guests, budget, food preferences and contact details, then hand off to Aziana.",
+    "general_questions": "Use WhatsApp or email for direct guest inquiries."
+  },
+  "last_updated": "2026-06-22"
+}
