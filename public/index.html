@@ -53,17 +53,18 @@
   }
   </script>
 </head>
-<body>
+<body data-page="home">
   <nav class="nav" aria-label="Primary navigation">
     <a href="#top" aria-label="Aziana home"><img src="Aziana_logo.png" alt="Aziana logo" /></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-links" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
     <ul id="primary-links">
       <li><a href="#cuisine">Cuisine</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#visit">Visit</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="seasonal-campaigns.html">Current</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="sushi-philipsburg.html">Sushi</a></li>
-      <li><button type="button" class="glf-button nav-cta" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order</button></li>
+      <li><button type="button" class="glf-button nav-cta" data-az-action="order">Order</button></li>
     </ul>
   </nav>
 
@@ -74,8 +75,8 @@
       <p>Fresh sushi, seafood, steaks, poke bowls and Chinese-Indonesian specialties served at Aziana in Bobby's Marina, Sint Maarten.</p>
       <div class="tags">Sushi <span>·</span> Seafood <span>·</span> Steak <span>·</span> Satay <span>·</span> Poke Bowls</div>
       <div class="btns">
-        <button type="button" class="glf-button btn" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order Online →</button>
-        <button type="button" class="glf-button btn secondary" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0" data-glf-reservation="true">Reserve a Table →</button>
+        <button type="button" class="glf-button btn" data-az-action="order">Order Online →</button>
+        <button type="button" class="glf-button btn secondary" data-az-action="reserve">Reserve a Table →</button>
       </div>
       <a class="proof" href="https://www.tripadvisor.com/Restaurant_Review-g147347-d15843803-Reviews-Aziana_BV-Philipsburg_Sint_Maarten_St_Martin_St_Maarten.html" target="_blank" rel="noopener"><b>★★★★½</b> Travelers' Choice on Tripadvisor</a>
     </div>
@@ -115,7 +116,7 @@
         <a class="menu-item" href="takeout-online-ordering-sint-maarten.html"><h3>Takeout & Ordering</h3><p>Order online for pickup and easy meals.</p></a>
         <a class="menu-item" href="family-group-dining-philipsburg.html"><h3>Family & Groups</h3><p>Shared plates, sushi combinations and group meals.</p></a>
       </div>
-      <p class="menu-link"><a class="btn" href="menus/Marina_Menu_2026.pdf" target="_blank" rel="noopener">Download Full Menu PDF →</a></p>
+      <p class="menu-link"><a class="btn" data-az-action="menu" href="menus/Marina_Menu_2026.pdf" target="_blank" rel="noopener">Download Full Menu PDF →</a></p>
     </div>
   </section>
 
@@ -160,8 +161,18 @@
       <div class="eyebrow">Events & Catering</div>
       <h2 class="section-title">Occasions worth <em>remembering.</em></h2>
       <p class="lede">Birthdays, company dinners, group evenings and private gatherings at the table, on the porch or near the marina.</p>
-      <p class="menu-link"><a class="btn" href="mailto:azianabv@gmail.com?subject=Events%20%26%20Catering%20Inquiry">Inquire →</a></p>
+      <p class="menu-link"><a class="btn" href="events-catering-sint-maarten.html">Plan an Event →</a></p>
       <div class="gallery"><figure><img src="images/events.jpg" alt="Private event indoors at Aziana with marina views" loading="lazy"><figcaption>Inside</figcaption></figure><figure><img src="images/events-square.jpg" alt="Daytime gathering on the marina square outside Aziana" loading="lazy"><figcaption>On the square</figcaption></figure></div>
+    </div>
+  </section>
+
+  <section class="dark auto-campaigns" data-auto-campaigns="relevant" data-limit="3">
+    <div class="wrap">
+      <div class="eyebrow">Current Aziana</div>
+      <h2 class="section-title">Useful right now, <em>updated automatically.</em></h2>
+      <p class="lede">Seasonal dining, takeout and group-dinner messages rotate from the shared campaign file without rebuilding the homepage.</p>
+      <div class="auto-campaign-list menu-grid"></div>
+      <p class="menu-link"><a class="btn secondary" href="seasonal-campaigns.html">See Current Campaigns →</a></p>
     </div>
   </section>
 
@@ -187,21 +198,21 @@
         <div><img src="Aziana_logo.png" alt="Aziana logo"><p class="prose">Asian fusion on the waterfront at Bobby's Marina, Philipsburg.</p></div>
         <div><h3>Explore</h3><ul><li><a href="#cuisine">Cuisine</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#visit">Visit</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
         <div><h3>Popular</h3><ul><li><a href="sushi-philipsburg.html">Sushi in Philipsburg</a></li><li><a href="waterfront-restaurant-philipsburg.html">Waterfront Restaurant</a></li><li><a href="poke-bowls-sint-maarten.html">Poke Bowls</a></li><li><a href="takeout-online-ordering-sint-maarten.html">Takeout & Ordering</a></li></ul></div>
-        <div><h3>Contact</h3><ul><li><a href="tel:+17215426988">+1 (721) 542-6988</a></li><li><a href="https://wa.me/17215880022" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:azianabv@gmail.com">azianabv@gmail.com</a></li><li><button type="button" class="glf-button footer-action" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order Online</button></li></ul></div>
+        <div><h3>Contact</h3><ul><li><a href="tel:+17215426988">+1 (721) 542-6988</a></li><li><a href="https://wa.me/17215880022" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:azianabv@gmail.com">azianabv@gmail.com</a></li><li><button type="button" class="glf-button footer-action" data-az-action="order">Order Online</button></li></ul></div>
       </div>
       <div class="bottom"><span>© 2018 - <span id="copyYear">2026</span> Aziana BV · Philipsburg, Sint Maarten</span><span><a href="llms.txt">AI info</a> · <a href="sitemap.xml">Sitemap</a></span></div>
     </div>
   </footer>
 
   <div class="mobile-actions" aria-label="Quick actions">
-    <button type="button" class="glf-button" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0">Order</button>
-    <button type="button" class="glf-button" data-glf-cuid="c11d4461-f717-4a32-a283-2b5b37a6b8ab" data-glf-ruid="d4a3dc0d-10df-4722-949d-2840815cf5e0" data-glf-reservation="true">Reserve</button>
-    <a href="https://wa.me/17215880022" target="_blank" rel="noopener">WhatsApp</a>
+    <button type="button" class="glf-button" data-az-action="order">Order</button>
+    <button type="button" class="glf-button" data-az-action="reserve">Reserve</button>
+    <a data-az-action="whatsapp" href="https://wa.me/17215880022" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 
+  <script src="site-automation.js" defer></script>
   <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
   <script>
-    const y=document.getElementById('copyYear');if(y)y.textContent=new Date().getFullYear();
     const nav=document.querySelector('.nav');
     const toggle=document.querySelector('.menu-toggle');
     const closeMenu=()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu')};
