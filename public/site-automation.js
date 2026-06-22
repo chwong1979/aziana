@@ -7,12 +7,30 @@
   const sendEvent = (name, data = {}) => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: name, ...data });
+    if (typeof window.gtag === 'function') {
+      try { window.gtag('event', name, data); } catch (_) {}
+    }
     if (window.cloudflareWebAnalytics) {
       try { window.cloudflareWebAnalytics.track(name, data); } catch (_) {}
     }
   };
 
   const encode = (value) => encodeURIComponent(value || '');
+
+  const loadGoogleAnalytics = (siteData) => {
+    const id = siteData?.analytics?.googleMeasurementId;
+    if (!id || window.__azianaGoogleAnalyticsLoaded) return;
+    window.__azianaGoogleAnalyticsLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', id, { send_page_view: true });
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
+    document.head.appendChild(script);
+  };
 
   const isActive = (item) => {
     if (item.active === false) return false;
@@ -143,6 +161,7 @@
       fetch('/campaign-config.json').then(r => r.ok ? r.json() : {}).catch(() => ({}))
     ]);
 
+    loadGoogleAnalytics(siteData);
     applyActionButtons(siteData);
     applyContactBlocks(siteData);
     applyInquiryLinks(siteData);
