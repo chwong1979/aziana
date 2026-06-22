@@ -8,6 +8,8 @@ Aziana is a waterfront Asian fusion restaurant and bar at Bobby's Marina in Phil
 - FAQ: https://aziana.sx/faq.html
 - Menu PDF: https://aziana.sx/menus/Marina_Menu_2026.pdf
 - AI knowledge seed: https://aziana.sx/ai-knowledge.json
+- Menu highlights: https://aziana.sx/menu-highlights.json
+- Site index: https://aziana.sx/site-index.json
 
 ## SEO landing pages
 
@@ -16,6 +18,9 @@ Aziana is a waterfront Asian fusion restaurant and bar at Bobby's Marina in Phil
 - Poke bowls in Sint Maarten: https://aziana.sx/poke-bowls-sint-maarten.html
 - Asian fusion in Sint Maarten: https://aziana.sx/asian-fusion-sint-maarten.html
 - Bar and lounge in Philipsburg: https://aziana.sx/bar-lounge-philipsburg.html
+- Takeout and online ordering: https://aziana.sx/takeout-online-ordering-sint-maarten.html
+- Visitor restaurant page: https://aziana.sx/restaurant-near-cruise-port-philipsburg.html
+- Family and group dining: https://aziana.sx/family-group-dining-philipsburg.html
 
 ## Business summary
 
@@ -23,13 +28,13 @@ Aziana serves sushi, sashimi, poke bowls, seafood, steaks, satay, snack platters
 
 Kitchen hours listed on the website are Monday to Saturday from 12:00 to 22:00. Sunday is listed as closed.
 
-For time-sensitive guest requests such as same-day reservations, delivery availability, allergy-sensitive orders, event quotes, complaints or special arrangements, route guests to Aziana directly instead of inventing availability.
+For time-sensitive guest requests such as same-day reservations, delivery availability, allergy-sensitive orders, quotes, complaints or special arrangements, route guests to Aziana directly instead of inventing availability.
 
 ## Common guest actions
 
 - Order online: use the Order Online button on the website.
 - Reserve a table: use the Reserve a Table button on the website or contact Aziana directly.
-- Events and catering: collect event date, guest count, budget, event type, food preferences and contact details.
+- Group inquiries: collect date, guest count, budget, food preferences and contact details.
 - General inquiries: contact Aziana by phone, WhatsApp or email from the website.
 
 ## AIOS note
