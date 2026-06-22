@@ -1,0 +1,18 @@
+/* Hero image override — uses the stronger waterfront-night venue photo without changing base CSS. */
+.hero:before{
+  background:
+    linear-gradient(180deg,rgba(12,10,13,.30),rgba(12,10,13,.76)),
+    linear-gradient(90deg,rgba(92,12,64,.56),rgba(239,139,23,.12),transparent),
+    url('images/gallery-waterfront-night.webp') center 54%/cover !important;
+  filter:saturate(1.16) contrast(1.08) brightness(.94) !important;
+}
+
+@media(max-width:850px){
+  .hero:before{
+    background:
+      linear-gradient(180deg,rgba(12,10,13,.36),rgba(12,10,13,.82)),
+      linear-gradient(90deg,rgba(92,12,64,.52),rgba(239,139,23,.10),transparent),
+      url('images/gallery-waterfront-night.webp') center 55%/cover !important;
+    filter:saturate(1.14) contrast(1.07) brightness(.92) !important;
+  }
+}
