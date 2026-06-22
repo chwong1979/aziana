@@ -9,6 +9,12 @@ Aziana is a waterfront Asian fusion restaurant and bar at Bobby's Marina in Phil
 - Menu PDF: https://aziana.sx/menus/Marina_Menu_2026.pdf
 - AI knowledge seed: https://aziana.sx/ai-knowledge.json
 
+## SEO landing pages
+
+- Sushi in Philipsburg: https://aziana.sx/sushi-philipsburg.html
+- Waterfront restaurant in Philipsburg: https://aziana.sx/waterfront-restaurant-philipsburg.html
+- Poke bowls in Sint Maarten: https://aziana.sx/poke-bowls-sint-maarten.html
+
 ## Business summary
 
 Aziana serves sushi, sashimi, poke bowls, seafood, steaks, satay, snack platters and Chinese-Indonesian specialties.
