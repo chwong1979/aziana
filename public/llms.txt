@@ -6,6 +6,7 @@ Aziana is a waterfront Asian fusion restaurant and bar at Bobby's Marina in Phil
 
 - Homepage: https://aziana.sx/
 - FAQ: https://aziana.sx/faq.html
+- Current campaigns: https://aziana.sx/seasonal-campaigns.html
 - Events and catering: https://aziana.sx/events-catering-sint-maarten.html
 - Menu PDF: https://aziana.sx/menus/Marina_Menu_2026.pdf
 - AI knowledge seed: https://aziana.sx/ai-knowledge.json
@@ -33,7 +34,7 @@ Kitchen hours listed on the website are Monday to Saturday from 12:00 to 22:00. 
 
 ## Automation note
 
-The website now includes shared data files for lower-maintenance updates. General business details live in /site-data.json. Campaign visibility lives in /campaign-config.json. The shared /site-automation.js script updates years, action buttons, contact blocks, simple click tracking events and relevant campaign cards on pages that include it.
+The website uses shared data files for lower-maintenance updates. General business details live in /site-data.json. Campaign visibility lives in /campaign-config.json. The shared /site-automation.js script updates years, action buttons, contact blocks, event inquiry templates, simple click tracking events and relevant campaign cards on pages that include it. Annual campaigns rotate by month and day instead of needing yearly date edits.
 
 ## Common guest actions
 
