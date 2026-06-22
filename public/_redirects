@@ -1,3 +1,0 @@
-# Redirect old www host to the canonical apex domain
-https://www.aziana.sx/* https://aziana.sx/:splat 301!
-http://www.aziana.sx/* https://aziana.sx/:splat 301!
