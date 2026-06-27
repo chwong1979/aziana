@@ -1,8 +1,8 @@
 /* ============================================================
-   Aziana — "Azi" public chat widget  (self-contained, embeddable)
+   Aziana — "Azai" public chat widget  (self-contained, embeddable)
    Brain stays in AIOS: POST https://ai.odarius.com/public/advisor
    No login · FAQ-first · Haiku-pinned · per-IP rate limited server-side
-   v0.1.2 — panel is a div (no host section padding), email-first contacts
+   v0.1.3 — renamed to Azai, taller input (150px), smaller quick-question pills
    ============================================================ */
 (function () {
   if (window.__aziChat) return;          // guard against double-load
@@ -16,7 +16,7 @@
   var WA_URL    = 'https://wa.me/17215880022';
   var WA_LABEL  = 'WhatsApp · +1 (721) 588-0022';
 
-  var GREETING = "Hi, I'm Azi — Aziana's assistant. Ask me about our hours, the menu, or making a reservation.";
+  var GREETING = "Hi, I'm Azai — Aziana's assistant. Ask me about our hours, the menu, or making a reservation.";
   var CHIPS = ['What are your hours?', 'Do you have vegetarian sushi?', 'How do I make a reservation?'];
 
   var history = [];   // {role, content} — last 6 sent to the brain
@@ -53,7 +53,7 @@
     '.azi-bot .azi-bubble{background:#1d1923;border:1px solid rgba(243,236,224,.08);border-top-left-radius:4px;}',
     '.azi-user .azi-bubble{background:#7b0046;color:#fff;border-top-right-radius:4px;}',
     '.azi-chips{display:flex;flex-wrap:wrap;gap:8px;}',
-    '.azi-chip{background:rgba(239,139,23,.1);border:1px solid rgba(239,139,23,.4);color:#f9a440;padding:7px 12px;border-radius:999px;font-size:13px;cursor:pointer;font-family:inherit;transition:background .15s ease;}',
+    '.azi-chip{background:rgba(239,139,23,.1);border:1px solid rgba(239,139,23,.4);color:#f9a440;padding:5px 11px;border-radius:999px;font-size:12px;cursor:pointer;font-family:inherit;transition:background .15s ease;}',
     '.azi-chip:hover{background:rgba(239,139,23,.2);}',
     '.azi-actions{display:flex;flex-direction:column;gap:7px;margin-top:2px;}',
     '.azi-action{display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-size:12.5px;font-weight:500;padding:9px 12px;border-radius:10px;border:1px solid rgba(243,236,224,.2);color:#f3ece0;}',
@@ -67,7 +67,7 @@
     '.azi-typing i:nth-child(3){animation-delay:.3s;}',
     '@keyframes azi-bounce{0%,60%,100%{transform:translateY(0);opacity:.5;}30%{transform:translateY(-5px);opacity:1;}}',
     '.azi-input{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(243,236,224,.1);align-items:flex-end;}',
-    '.azi-input textarea{flex:1;resize:none;background:#1d1923;border:1px solid rgba(243,236,224,.14);border-radius:12px;color:#f3ece0;font-family:inherit;font-size:14px;padding:10px 12px;max-height:96px;line-height:1.4;outline:none;}',
+    '.azi-input textarea{flex:1;resize:none;background:#1d1923;border:1px solid rgba(243,236,224,.14);border-radius:12px;color:#f3ece0;font-family:inherit;font-size:14px;padding:10px 12px;max-height:150px;line-height:1.4;outline:none;}',
     '.azi-input textarea:focus{border-color:rgba(239,139,23,.6);}',
     '.azi-send{flex:0 0 auto;width:40px;height:40px;border-radius:11px;border:none;cursor:pointer;background:linear-gradient(145deg,#ef8b17,#d2740a);display:flex;align-items:center;justify-content:center;transition:transform .15s ease,opacity .15s ease;}',
     '.azi-send svg{width:18px;height:18px;}',
@@ -86,19 +86,19 @@
   var root = document.createElement('div');
   root.id = 'azi-chat-root';
   root.innerHTML =
-    '<button id="azi-launcher" aria-label="Chat with Azi, Aziana assistant" aria-expanded="false">' + ICON_CHAT + '<span class="azi-dot"></span></button>' +
-    '<div id="azi-panel" role="dialog" aria-label="Chat with Azi" aria-modal="false">' +
+    '<button id="azi-launcher" aria-label="Chat with Azai, Aziana assistant" aria-expanded="false">' + ICON_CHAT + '<span class="azi-dot"></span></button>' +
+    '<div id="azi-panel" role="dialog" aria-label="Chat with Azai" aria-modal="false">' +
       '<div class="azi-head">' +
         '<div class="azi-avatar" aria-hidden="true">A</div>' +
-        '<div class="azi-head-meta"><b>Azi</b><span>Aziana Assistant</span></div>' +
+        '<div class="azi-head-meta"><b>Azai</b><span>Aziana Assistant</span></div>' +
         '<button class="azi-close" aria-label="Close chat">&times;</button>' +
       '</div>' +
       '<div class="azi-msgs" aria-live="polite"></div>' +
       '<div class="azi-input">' +
-        '<textarea rows="1" placeholder="Ask Azi a question\u2026" aria-label="Message"></textarea>' +
+        '<textarea rows="1" placeholder="Ask Azai a question\u2026" aria-label="Message"></textarea>' +
         '<button class="azi-send" aria-label="Send" disabled>' + ICON_SEND + '</button>' +
       '</div>' +
-      '<div class="azi-foot">Azi can make mistakes \u2014 please confirm bookings by phone.</div>' +
+      '<div class="azi-foot">Azai can make mistakes \u2014 please confirm bookings by phone.</div>' +
     '</div>';
   document.body.appendChild(root);
 
@@ -173,7 +173,7 @@
   /* ---------- input state ---------- */
   function updateSend(){ sendBtn.disabled = busy || !ta.value.trim(); }
   function setBusy(v){ busy = v; ta.disabled = v; updateSend(); }
-  function autoGrow(){ ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 96) + 'px'; }
+  function autoGrow(){ ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 150) + 'px'; }
 
   function fallbackBubble(){
     var col = addBot("Sorry \u2014 I can't reach our assistant right now. Email is the fastest way to reach us:");
