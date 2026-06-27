@@ -2,17 +2,19 @@
    Aziana — "Azi" public chat widget  (self-contained, embeddable)
    Brain stays in AIOS: POST https://ai.odarius.com/public/advisor
    No login · FAQ-first · Haiku-pinned · per-IP rate limited server-side
-   v0.1.1 — compact content-hugging panel, slim header
+   v0.1.2 — panel is a div (no host section padding), email-first contacts
    ============================================================ */
 (function () {
   if (window.__aziChat) return;          // guard against double-load
   window.__aziChat = true;
 
   var ENDPOINT  = 'https://ai.odarius.com/public/advisor';
-  var WA_URL    = 'https://wa.me/17215880022';
-  var WA_LABEL  = 'WhatsApp · +1 (721) 588-0022';
+  var EMAIL_URL = 'mailto:azianabv@gmail.com';
+  var EMAIL_LABEL = 'Email · azianabv@gmail.com';
   var TEL_URL   = 'tel:+17215426988';
   var TEL_LABEL = 'Call · +1 (721) 542-6988';
+  var WA_URL    = 'https://wa.me/17215880022';
+  var WA_LABEL  = 'WhatsApp · +1 (721) 588-0022';
 
   var GREETING = "Hi, I'm Azi — Aziana's assistant. Ask me about our hours, the menu, or making a reservation.";
   var CHIPS = ['What are your hours?', 'Do you have vegetarian sushi?', 'How do I make a reservation?'];
@@ -32,7 +34,7 @@
     '#azi-launcher:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 12px 34px rgba(123,0,70,.5);}',
     '#azi-launcher svg{width:28px;height:28px;}',
     '#azi-launcher .azi-dot{position:absolute;top:11px;right:11px;width:9px;height:9px;border-radius:50%;background:#ef8b17;box-shadow:0 0 0 2px #2c0527;}',
-    '#azi-panel{position:fixed;right:20px;bottom:90px;width:min(360px,calc(100vw - 32px));max-height:min(72vh,500px);background:#15121a;border:1px solid rgba(243,236,224,.12);border-radius:16px;overflow:hidden;z-index:2147483001;display:none;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.55);font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;color:#f3ece0;opacity:0;transform:translateY(12px) scale(.98);transition:opacity .22s ease,transform .22s ease;}',
+    '#azi-panel{position:fixed;right:20px;bottom:90px;width:min(360px,calc(100vw - 32px));max-height:min(72vh,500px);padding:0;margin:0;background:#15121a;border:1px solid rgba(243,236,224,.12);border-radius:16px;overflow:hidden;z-index:2147483001;display:none;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.55);font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;color:#f3ece0;opacity:0;transform:translateY(12px) scale(.98);transition:opacity .22s ease,transform .22s ease;}',
     '#azi-panel.azi-open{display:flex;opacity:1;transform:none;}',
     '.azi-head{display:flex;align-items:center;gap:10px;padding:9px 13px;background:linear-gradient(135deg,#7b0046,#2c0527);border-bottom:1px solid rgba(239,139,23,.25);}',
     '.azi-avatar{width:32px;height:32px;border-radius:50%;flex:0 0 32px;background:radial-gradient(circle at 32% 30%,#9b1968,#7b0046);display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",Georgia,serif;font-size:19px;font-weight:600;color:#f3ece0;border:1px solid rgba(243,236,224,.28);}',
@@ -53,10 +55,11 @@
     '.azi-chips{display:flex;flex-wrap:wrap;gap:8px;}',
     '.azi-chip{background:rgba(239,139,23,.1);border:1px solid rgba(239,139,23,.4);color:#f9a440;padding:7px 12px;border-radius:999px;font-size:13px;cursor:pointer;font-family:inherit;transition:background .15s ease;}',
     '.azi-chip:hover{background:rgba(239,139,23,.2);}',
-    '.azi-actions{display:flex;flex-wrap:wrap;gap:8px;}',
-    '.azi-action{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:12.5px;font-weight:500;padding:8px 12px;border-radius:10px;border:1px solid rgba(243,236,224,.2);color:#f3ece0;}',
-    '.azi-action.azi-wa{background:rgba(37,211,102,.14);border-color:rgba(37,211,102,.5);}',
-    '.azi-action.azi-call{background:rgba(239,139,23,.14);border-color:rgba(239,139,23,.5);}',
+    '.azi-actions{display:flex;flex-direction:column;gap:7px;margin-top:2px;}',
+    '.azi-action{display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-size:12.5px;font-weight:500;padding:9px 12px;border-radius:10px;border:1px solid rgba(243,236,224,.2);color:#f3ece0;}',
+    '.azi-action.azi-email{background:rgba(239,139,23,.18);border-color:rgba(239,139,23,.6);color:#f9a440;}',
+    '.azi-action.azi-call{background:rgba(243,236,224,.05);border-color:rgba(243,236,224,.22);}',
+    '.azi-action.azi-wa{background:rgba(37,211,102,.10);border-color:rgba(37,211,102,.32);}',
     '.azi-action:hover{filter:brightness(1.15);}',
     '.azi-typing{display:flex;gap:5px;align-items:center;}',
     '.azi-typing i{width:7px;height:7px;border-radius:50%;background:#877d8a;animation:azi-bounce 1.2s infinite ease-in-out;}',
@@ -84,7 +87,7 @@
   root.id = 'azi-chat-root';
   root.innerHTML =
     '<button id="azi-launcher" aria-label="Chat with Azi, Aziana assistant" aria-expanded="false">' + ICON_CHAT + '<span class="azi-dot"></span></button>' +
-    '<section id="azi-panel" role="dialog" aria-label="Chat with Azi" aria-modal="false">' +
+    '<div id="azi-panel" role="dialog" aria-label="Chat with Azi" aria-modal="false">' +
       '<div class="azi-head">' +
         '<div class="azi-avatar" aria-hidden="true">A</div>' +
         '<div class="azi-head-meta"><b>Azi</b><span>Aziana Assistant</span></div>' +
@@ -96,7 +99,7 @@
         '<button class="azi-send" aria-label="Send" disabled>' + ICON_SEND + '</button>' +
       '</div>' +
       '<div class="azi-foot">Azi can make mistakes \u2014 please confirm bookings by phone.</div>' +
-    '</section>';
+    '</div>';
   document.body.appendChild(root);
 
   var launcher = root.querySelector('#azi-launcher');
@@ -129,16 +132,19 @@
   function addUser(text){ var c = addRow('user'); addBubble(c, text); scrollDown(); }
   function addBot(text){ var c = addRow('bot'); addBubble(c, text); scrollDown(); return c; }
 
+  function azAction(cls, href, label, ext){
+    var a = document.createElement('a');
+    a.className = 'azi-action ' + cls; a.href = href;
+    if (ext){ a.target = '_blank'; a.rel = 'noopener'; }
+    a.textContent = label;
+    return a;
+  }
   function addContacts(col){
     var wrap = document.createElement('div');
     wrap.className = 'azi-actions';
-    var a1 = document.createElement('a');
-    a1.className = 'azi-action azi-wa'; a1.href = WA_URL; a1.target = '_blank'; a1.rel = 'noopener';
-    a1.textContent = WA_LABEL;
-    var a2 = document.createElement('a');
-    a2.className = 'azi-action azi-call'; a2.href = TEL_URL;
-    a2.textContent = TEL_LABEL;
-    wrap.appendChild(a1); wrap.appendChild(a2);
+    wrap.appendChild(azAction('azi-email', EMAIL_URL, EMAIL_LABEL, false));
+    wrap.appendChild(azAction('azi-call', TEL_URL, TEL_LABEL, false));
+    wrap.appendChild(azAction('azi-wa', WA_URL, WA_LABEL, true));
     col.appendChild(wrap);
     scrollDown();
   }
@@ -170,7 +176,7 @@
   function autoGrow(){ ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 96) + 'px'; }
 
   function fallbackBubble(){
-    var col = addBot("Sorry \u2014 I can't reach our assistant right now. Please reach us directly:");
+    var col = addBot("Sorry \u2014 I can't reach our assistant right now. Email is the fastest way to reach us:");
     addContacts(col);
   }
 
