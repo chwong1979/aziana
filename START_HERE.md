@@ -5,8 +5,17 @@
 **Primary domain:** `https://aziana.sx`  
 **Odarius domain:** `https://aziana.odarius.com`  
 **Worker fallback:** `aziana.chwong1979.workers.dev`  
-**Current version pointer:** `package.json` = `0.4.1`; `README.md` previously said v0.4.0 and was corrected during cleanup.  
+**Current version pointer:** `package.json` = `0.4.2` (Azai chat widget v0.1.3 shipped + promoted 2026-06-27).  
 **Rollback branch for this cleanup:** `backup/pre-doc-trim-2026-06-23`
+
+## Azai chat widget (LIVE — promoted 2026-06-27)
+
+- File: `public/azi-chat.js` is loaded by one line in `public/index.html` before `</body>`: `<script src="azi-chat.js" defer></script>`. (The script file is named `azi-chat.js`; only the on-screen persona changed to "Azai".)
+- It is a self-contained IIFE (bottom-right bubble → panel) with scoped `azi-*` styles — a thin FRONT-END only. **The brain stays in AIOS:** it POSTs to `https://ai.odarius.com/public/advisor` (no login; `app` forced to `aziana`; Haiku-pinned; per-IP 25/day; reply `{ok,source,text,...}`). Do NOT add AI logic to the widget — change brain behaviour in the `chwong1979/aios` repo.
+- Current version **v0.1.3** (in the file's top comment): renamed Azi→**Azai**; panel is a `<div>` (NOT a `<section>` — the site's global `section{padding:clamp(4rem,9vw,7rem) 0}` was injecting dead space, fixed in v0.1.2); contacts are **email-first** (azianabv@gmail.com), then Call, WhatsApp **last**; taller input (max-height 150px); smaller quick-question pills (12px). Brain side renamed to Azai too (AIOS v0.22.0: aziana persona row + worker greeting/scope).
+- Deploy = push to `main` (Cloudflare Workers Builds auto-deploys). Byte-verify the live file at `https://aziana.sx/azi-chat.js` after a push.
+- Open OPTIONAL polish (not requested): the "waterfront" word is overused across homepage/SEO copy; the FAQ/site still say "Sunday closed" (confirm with Chin if Sundays are open).
+
 
 ## Read order
 

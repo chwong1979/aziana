@@ -6,8 +6,9 @@ Aziana is a static marketing website for the restaurant at Bobby's Marina, Phili
 
 - Repo: `chwong1979/aziana`
 - Deploy: Cloudflare Workers Static Assets from `public/`
-- Version pointer: `package.json` = `0.4.1`
+- Version pointer: `package.json` = `0.4.2`
 - Rollback branch for cleanup: `backup/pre-doc-trim-2026-06-23`
+- **Azai chat widget LIVE (promoted 2026-06-27, v0.1.3):** `public/azi-chat.js` + one `<script>` line in `index.html`. Thin front-end; brain is AIOS `POST https://ai.odarius.com/public/advisor`. See START_HERE "Azai chat widget" section. Don't add AI logic here.
 
 ## Current deploy shape
 
@@ -19,11 +20,12 @@ Important deploy files:
 - `package.json` — deploy/check scripts.
 - `public/index.html` — homepage and main shell.
 
-No runtime DB, Supabase, AIOS, or environment-variable work is active in this repo.
+No server, DB, Supabase, or environment-variable work lives in this repo. The Azai widget calls the AIOS public advisor (`POST https://ai.odarius.com/public/advisor`) client-side only — the brain and any AI behaviour changes live in the `chwong1979/aios` repo, not here.
 
 ## Current public surfaces
 
 - Homepage: `public/index.html`
+- Azai chat widget: `public/azi-chat.js` (loaded by `index.html`; brain = AIOS public advisor)
 - FAQ page: `public/faq.html`
 - Sushi SEO page: `public/sushi-philipsburg.html`
 - Seasonal/current page: `public/seasonal-campaigns.html`
