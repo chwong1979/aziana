@@ -2,7 +2,7 @@
    Aziana — "Azi" public chat widget  (self-contained, embeddable)
    Brain stays in AIOS: POST https://ai.odarius.com/public/advisor
    No login · FAQ-first · Haiku-pinned · per-IP rate limited server-side
-   v0.1.0
+   v0.1.1 — compact content-hugging panel, slim header
    ============================================================ */
 (function () {
   if (window.__aziChat) return;          // guard against double-load
@@ -32,21 +32,21 @@
     '#azi-launcher:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 12px 34px rgba(123,0,70,.5);}',
     '#azi-launcher svg{width:28px;height:28px;}',
     '#azi-launcher .azi-dot{position:absolute;top:11px;right:11px;width:9px;height:9px;border-radius:50%;background:#ef8b17;box-shadow:0 0 0 2px #2c0527;}',
-    '#azi-panel{position:fixed;right:20px;bottom:92px;width:min(384px,calc(100vw - 32px));height:min(600px,calc(100vh - 130px));background:#15121a;border:1px solid rgba(243,236,224,.12);border-radius:18px;overflow:hidden;z-index:2147483001;display:none;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.55);font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;color:#f3ece0;opacity:0;transform:translateY(12px) scale(.98);transition:opacity .22s ease,transform .22s ease;}',
+    '#azi-panel{position:fixed;right:20px;bottom:90px;width:min(360px,calc(100vw - 32px));max-height:min(72vh,500px);background:#15121a;border:1px solid rgba(243,236,224,.12);border-radius:16px;overflow:hidden;z-index:2147483001;display:none;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.55);font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;color:#f3ece0;opacity:0;transform:translateY(12px) scale(.98);transition:opacity .22s ease,transform .22s ease;}',
     '#azi-panel.azi-open{display:flex;opacity:1;transform:none;}',
-    '.azi-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(135deg,#7b0046,#2c0527);border-bottom:1px solid rgba(239,139,23,.25);}',
-    '.azi-avatar{width:40px;height:40px;border-radius:50%;flex:0 0 40px;background:radial-gradient(circle at 32% 30%,#9b1968,#7b0046);display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;color:#f3ece0;border:1px solid rgba(243,236,224,.28);}',
+    '.azi-head{display:flex;align-items:center;gap:10px;padding:9px 13px;background:linear-gradient(135deg,#7b0046,#2c0527);border-bottom:1px solid rgba(239,139,23,.25);}',
+    '.azi-avatar{width:32px;height:32px;border-radius:50%;flex:0 0 32px;background:radial-gradient(circle at 32% 30%,#9b1968,#7b0046);display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",Georgia,serif;font-size:19px;font-weight:600;color:#f3ece0;border:1px solid rgba(243,236,224,.28);}',
     '.azi-head-meta{flex:1;min-width:0;}',
-    '.azi-head-meta b{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:19px;line-height:1.1;display:block;}',
-    '.azi-head-meta span{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,236,224,.7);}',
+    '.azi-head-meta b{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:16px;line-height:1.1;display:block;}',
+    '.azi-head-meta span{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:rgba(243,236,224,.65);}',
     '.azi-close{background:none;border:none;color:rgba(243,236,224,.8);cursor:pointer;font-size:24px;line-height:1;padding:2px 6px;border-radius:8px;}',
     '.azi-close:hover{color:#fff;background:rgba(255,255,255,.12);}',
-    '.azi-msgs{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:12px;}',
+    '.azi-msgs{flex:1 1 auto;min-height:0;overflow-y:auto;padding:14px 14px;display:flex;flex-direction:column;gap:10px;}',
     '.azi-msgs::-webkit-scrollbar{width:7px;}',
     '.azi-msgs::-webkit-scrollbar-thumb{background:rgba(243,236,224,.14);border-radius:4px;}',
     '.azi-row{display:flex;width:100%;}',
     '.azi-row.azi-user{justify-content:flex-end;}',
-    '.azi-col{display:flex;flex-direction:column;gap:8px;max-width:84%;}',
+    '.azi-col{display:flex;flex-direction:column;gap:8px;max-width:90%;}',
     '.azi-bubble{padding:10px 14px;border-radius:14px;font-size:14.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word;}',
     '.azi-bot .azi-bubble{background:#1d1923;border:1px solid rgba(243,236,224,.08);border-top-left-radius:4px;}',
     '.azi-user .azi-bubble{background:#7b0046;color:#fff;border-top-right-radius:4px;}',
@@ -71,7 +71,7 @@
     '.azi-send:disabled{opacity:.4;cursor:default;}',
     '.azi-send:not(:disabled):hover{transform:scale(1.06);}',
     '.azi-foot{text-align:center;font-size:10.5px;color:#877d8a;padding:0 14px 10px;}',
-    '@media (max-width:480px){#azi-panel{right:12px;left:12px;width:auto;bottom:84px;height:calc(100vh - 100px);height:calc(100dvh - 100px);}#azi-launcher{right:16px;bottom:16px;}}'
+    '@media (max-width:480px){#azi-panel{right:12px;left:12px;width:auto;bottom:80px;max-height:calc(100dvh - 92px);}#azi-launcher{right:16px;bottom:16px;}}'
   ].join('');
 
   /* ---------- inject ---------- */
