@@ -16,7 +16,7 @@ This repo is the public Aziana marketing website. It is smaller and less mature 
 ## Deploy discipline
 
 - Cloudflare Workers Static Assets deploy from `public/` using `wrangler.jsonc`.
-- No database, no Supabase, no env vars, no AIOS migration work in this repo right now.
+- No database, no Supabase, no env vars, no AIOS migration work in this repo right now. Worker logic is limited to the `/api/health` version-proof endpoint.
 - Pushing docs to `main` is safe but may still trigger a Cloudflare build depending on project settings.
 
 ## Cleanup pass proof

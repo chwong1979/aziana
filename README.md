@@ -15,15 +15,15 @@ Read these files first:
 ## Repo facts
 
 - **Source of truth:** this repo. Pushes to `main` auto-deploy through Cloudflare Workers Builds.
-- **Build:** none — self-contained static site deployed from `public/` with Workers Static Assets.
+- **Build:** none — static site deployed from `public/` with Workers Static Assets plus a tiny Worker health endpoint.
 - **Entry:** `public/index.html`.
 - **Assets:** `public/images/`, `public/menus/`, logo `public/Aziana_logo.png`.
 - **Shared data:** `public/site-data.json`.
-- **Version pointer:** `package.json` currently says `0.4.1`. Do not bump during cleanup.
+- **Version pointer:** `package.json` currently says `0.4.4`. Do not bump during cleanup.
 
 ## Deploy (Cloudflare Workers, Git-connected)
 
-Cloudflare watches the production branch `main` and runs `npx wrangler deploy`. The static-assets configuration lives in `wrangler.jsonc`; no environment variables are required.
+Cloudflare watches the production branch `main` and runs `npx wrangler deploy`. The static-assets configuration lives in `wrangler.jsonc`; no environment variables are required. `GET /api/health` is the only Worker route and exists for CommandOS Suite Truth version proof.
 
 The production Worker is `aziana` at `aziana.chwong1979.workers.dev`. Custom domains are handled in Cloudflare.
 
