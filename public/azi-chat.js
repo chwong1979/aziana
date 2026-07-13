@@ -2,7 +2,7 @@
    Aziana — "Azai" public chat widget  (self-contained, embeddable)
    Brain stays in AIOS: POST https://ai.odarius.com/public/advisor
    No login · FAQ-first · Haiku-pinned · per-IP rate limited server-side
-   v0.1.3 — renamed to Azai, taller input (150px), smaller quick-question pills
+   v0.1.4 — private session continuity + inline safety/privacy notice
    ============================================================ */
 (function () {
   if (window.__aziChat) return;          // guard against double-load
@@ -15,6 +15,7 @@
   var TEL_LABEL = 'Call · +1 (721) 542-6988';
   var WA_URL    = 'https://wa.me/17215880022';
   var WA_LABEL  = 'WhatsApp · +1 (721) 588-0022';
+  var SESSION_KEY = 'aziana.azai.session';
 
   var GREETING = "Hi, I'm Azai — Aziana's assistant. Ask me about our hours, the menu, or making a reservation.";
   var CHIPS = ['What are your hours?', 'Do you have vegetarian sushi?', 'How do I make a reservation?'];
@@ -23,6 +24,26 @@
   var busy = false;
   var started = false;
   var typingRow = null;
+
+  function newSessionId(){
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    if (window.crypto && typeof window.crypto.getRandomValues === 'function'){
+      var bytes = new Uint8Array(16);
+      window.crypto.getRandomValues(bytes);
+      return Array.prototype.map.call(bytes, function(b){ return b.toString(16).padStart(2, '0'); }).join('');
+    }
+    return null;
+  }
+  function loadSessionId(){
+    try {
+      var saved = window.sessionStorage.getItem(SESSION_KEY);
+      if (saved) return saved;
+      var created = newSessionId();
+      if (created) window.sessionStorage.setItem(SESSION_KEY, created);
+      return created;
+    } catch (_) { return newSessionId(); }
+  }
+  var sessionId = loadSessionId();
 
   var ICON_CHAT = '<svg viewBox="0 0 24 24" fill="none" stroke="#f3ece0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>';
   var ICON_SEND = '<svg viewBox="0 0 24 24" fill="none" stroke="#2c0527" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></svg>';
@@ -73,7 +94,8 @@
     '.azi-send svg{width:18px;height:18px;}',
     '.azi-send:disabled{opacity:.4;cursor:default;}',
     '.azi-send:not(:disabled):hover{transform:scale(1.06);}',
-    '.azi-foot{text-align:center;font-size:10.5px;color:#877d8a;padding:0 14px 10px;}',
+    '.azi-foot{text-align:center;font-size:10.5px;color:#aaa1ac;padding:0 14px 10px;line-height:1.4;}',
+    '.azi-foot a{color:#f9a440;text-underline-offset:2px;}',
     '@media (max-width:480px){#azi-panel{right:12px;left:12px;width:auto;bottom:80px;max-height:calc(100dvh - 92px);}#azi-launcher{right:16px;bottom:16px;}}'
   ].join('');
 
@@ -98,7 +120,7 @@
         '<textarea rows="1" placeholder="Ask Azai a question\u2026" aria-label="Message"></textarea>' +
         '<button class="azi-send" aria-label="Send" disabled>' + ICON_SEND + '</button>' +
       '</div>' +
-      '<div class="azi-foot">Azai can make mistakes \u2014 please confirm bookings by phone.</div>' +
+      '<div class="azi-foot">Please don\u2019t share payment or sensitive personal information. <a href="/privacy.html">Privacy</a></div>' +
     '</div>';
   document.body.appendChild(root);
 
@@ -196,7 +218,7 @@
     fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: text, history: prior })
+      body: JSON.stringify({ message: text, history: prior, session_id: sessionId })
     })
     .then(function(r){ return r.json().catch(function(){ return null; }); })
     .then(function(data){
