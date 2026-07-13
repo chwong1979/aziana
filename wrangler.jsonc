@@ -7,8 +7,12 @@
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/health"],
+    "run_worker_first": ["/api/health", "/api/visitor", "/api/advisor"],
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
+  },
+  "vars": {
+    "SUPABASE_URL": "https://juohpycbdmhyonhpmanz.supabase.co",
+    "SUPABASE_PUBLISHABLE_KEY": "sb_publishable_5ehyDu2dl6JXHaIHvgs8IQ_s95R8RDB"
   }
 }

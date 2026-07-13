@@ -154,9 +154,20 @@
     }, { passive: true });
   };
 
+  const notifyActiveVisitor = () => {
+    try {
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon('/api/visitor', new Blob([], { type: 'application/octet-stream' }));
+        return;
+      }
+      fetch('/api/visitor', { method: 'POST', keepalive: true }).catch(() => {});
+    } catch (_) {}
+  };
+
   const init = async () => {
     applyYear();
     trackClicks();
+    notifyActiveVisitor();
 
     const [siteData, campaignData] = await Promise.all([
       fetch('/site-data.json').then(r => r.ok ? r.json() : {}).catch(() => ({})),

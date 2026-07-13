@@ -1,14 +1,14 @@
 /* ============================================================
    Aziana — "Azai" public chat widget  (self-contained, embeddable)
-   Brain stays in AIOS: POST https://ai.odarius.com/public/advisor
+   Brain stays in AIOS via Aziana's same-origin /api/advisor proxy
    No login · FAQ-first · Haiku-pinned · per-IP rate limited server-side
-   v0.1.4 — private session continuity + inline safety/privacy notice
+   v0.1.5 — same-origin proxy + generic Suite question signal
    ============================================================ */
 (function () {
   if (window.__aziChat) return;          // guard against double-load
   window.__aziChat = true;
 
-  var ENDPOINT  = 'https://ai.odarius.com/public/advisor';
+  var ENDPOINT  = '/api/advisor';
   var EMAIL_URL = 'mailto:azianabv@gmail.com';
   var EMAIL_LABEL = 'Email · azianabv@gmail.com';
   var TEL_URL   = 'tel:+17215426988';

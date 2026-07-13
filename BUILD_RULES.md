@@ -16,7 +16,9 @@ This repo is the public Aziana marketing website. It is smaller and less mature 
 ## Deploy discipline
 
 - Cloudflare Workers Static Assets deploy from `public/` using `wrangler.jsonc`.
-- No database, no Supabase, no env vars, no AIOS migration work in this repo right now. Worker logic is limited to the `/api/health` version-proof endpoint.
+- Worker routes are limited to `/api/health`, `/api/visitor`, and `/api/advisor`. The advisor route is a transparent proxy to the existing AIOS public advisor; AI behavior still belongs in AIOS.
+- The only Supabase write surface is `public.emit_aziana_suite_alert`, installed from `db/0001_aziana_suite_alert_rpc.sql`. It accepts only a generic event type and optional SHA-256 session hash, resolves Aziana owners server-side, and never accepts question text, history, page data, or visitor identity.
+- Keep `AZIANA_SUITE_TOKEN` as a Cloudflare Worker secret. Never commit or log its plaintext. `SUPABASE_URL` and the publishable key are non-secret Worker vars.
 - Pushing docs to `main` is safe but may still trigger a Cloudflare build depending on project settings.
 
 ## Cleanup pass proof
