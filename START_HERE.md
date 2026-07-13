@@ -5,18 +5,19 @@
 **Primary domain:** `https://aziana.sx`  
 **Odarius domain:** `https://aziana.odarius.com`  
 **Worker fallback:** `aziana.chwong1979.workers.dev`  
-**Current version pointer:** `package.json` = `0.4.5` (Azai inline safety/privacy notice, privacy page, and hashed-session continuity for the AIOS 90-day transcript viewer. No popup or checkbox. Prior `0.4.4`: operational health proof endpoint `/api/health`).
+**Current version pointer:** `package.json` = `0.5.0` (generic, rate-limited Suite notifications for active visitors and Azai questions; same-origin advisor proxy; no question text or visitor identity crosses into the Suite inbox. Prior `0.4.5`: Azai privacy notice and hashed-session continuity).
 **Rollback branch for this cleanup:** `backup/pre-doc-trim-2026-06-23`
 
 ## Azai chat widget (LIVE — promoted 2026-06-27)
 
 - File: `public/azi-chat.js` is loaded by one line in `public/index.html` before `</body>`: `<script src="azi-chat.js" defer></script>`. (The script file is named `azi-chat.js`; only the on-screen persona changed to "Azai".)
-- It is a self-contained IIFE (bottom-right bubble → panel) with scoped `azi-*` styles — a thin FRONT-END only. **The brain stays in AIOS:** it POSTs to `https://ai.odarius.com/public/advisor` (no login; `app` forced to `aziana`; Haiku-pinned; per-IP 25/day; reply `{ok,source,text,...}`). Do NOT add AI logic to the widget — change brain behaviour in the `chwong1979/aios` repo.
+- It is a self-contained IIFE (bottom-right bubble → panel) with scoped `azi-*` styles — a thin FRONT-END only. **The brain stays in AIOS:** it POSTs to Aziana's same-origin `/api/advisor`, which transparently proxies `https://ai.odarius.com/public/advisor` (no login; `app` forced to `aziana`; Haiku-pinned; per-IP 25/day; reply `{ok,source,text,...}`). Do NOT add AI logic to the widget — change brain behaviour in the `chwong1979/aios` repo.
 - Current version **v0.1.4** (in the file's top comment): adds the quiet inline warning “Please don’t share payment or sensitive personal information.” with a Privacy link, plus a cryptographically random per-tab session identifier sent to AIOS. The browser never sends the identifier to Supabase directly; AIOS stores only its SHA-256 hash. There is no privacy popup or checkbox. Prior v0.1.3 renamed Azi→**Azai**, kept contacts email-first, and refined the panel sizing.
 - `public/privacy.html` explains the purpose, administrator-only access, 90-day raw retention, hashed session identity, service providers, sensitive-data warning, and privacy contact. It is linked from the chat and homepage footer.
 - Deploy = push to `main` (Cloudflare Workers Builds auto-deploys). Byte-verify the live file at `https://aziana.sx/azi-chat.js` after a push.
 - Polish DONE 2026-06-27 (v0.4.3): the homepage "waterfront" overuse was trimmed — the two pure body-prose repeats (bar lede + footer tagline) were reworded, while every SEO-load-bearing instance was deliberately KEPT (meta description, OG tag, JSON-LD schema, the hero H1 `.wf` span, the "Waterfront Restaurant in Philipsburg" eyebrow, the "Waterfront Dining"/"Waterfront Evenings" section labels, alt text, the `.waterfront-night` CSS class + `gallery-waterfront-night.webp` filename). The dedicated SEO landing page `public/waterfront-restaurant-philipsburg.html` and the AI/SEO data files (`ai-knowledge.json`, `llms.txt`, `campaign-config.json`, `sitemap.xml`, `site-index.json`) were left entirely untouched. SUNDAY HOURS CONFIRMED by Chin 2026-06-27: Aziana is NOT open Sundays — the "Sunday | Closed" copy (index.html visit section, `site-data.json`, `ai-knowledge.json`, `llms.txt`) is correct as written; no change needed.
 - Health proof DONE 2026-07-02 (v0.4.4): added a tiny Worker wrapper for `GET /api/health` so CommandOS Suite Truth can prove the deployed Aziana version. It delegates all non-health traffic to the existing static assets binding and does not change public content, SEO copy, images, ordering/reservation IDs, or the Azai widget.
+- Suite notifications DONE 2026-07-13 (v0.5.0): `/api/visitor` emits at most one global active-visitor alert per UTC hour; successful `/api/advisor` calls emit at most one generic question alert per hashed session per UTC day. The Worker sends only the event and SHA-256 hash to a secret-authenticated Supabase RPC. Question text, history, raw session ID, IP, and page data are excluded.
 
 
 ## Read order
@@ -36,7 +37,7 @@ There is no heavy app runtime here. Treat the site as a static marketing website
 - Production branch: `main`.
 - Static asset directory: `./public` from `wrangler.jsonc`.
 - Deploy command: `wrangler deploy` / Cloudflare Workers Builds.
-- No database or runtime env vars. Worker logic is limited to `/api/health`; all public site traffic delegates to the static-assets binding.
+- Runtime API routes are `/api/health`, `/api/visitor`, and `/api/advisor`; all other traffic delegates to the static-assets binding. Suite alert delivery requires the `AZIANA_SUITE_TOKEN` Worker secret and the non-secret Supabase URL/publishable-key vars in `wrangler.jsonc`.
 
 ## Important files
 

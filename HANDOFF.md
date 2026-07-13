@@ -6,9 +6,9 @@ Aziana is a static marketing website for the restaurant at Bobby's Marina, Phili
 
 - Repo: `chwong1979/aziana`
 - Deploy: Cloudflare Workers Static Assets from `public/`
-- Version pointer: `package.json` = `0.4.5`
+- Version pointer: `package.json` = `0.5.0`
 - Rollback branch for cleanup: `backup/pre-doc-trim-2026-06-23`
-- **Azai chat widget source v0.1.4:** `public/azi-chat.js` + one `<script>` line in `index.html`. Thin front-end; brain is AIOS `POST https://ai.odarius.com/public/advisor`. The widget shows one inline safety sentence and a Privacy link—no popup/checkbox—and sends a random per-tab session ID that AIOS hashes before transcript storage. See START_HERE "Azai chat widget" section. Don't add AI logic here.
+- **Azai chat widget source v0.1.5:** `public/azi-chat.js` + one `<script>` line in `index.html`. Thin front-end; brain remains AIOS through Aziana's same-origin `/api/advisor` proxy. The widget shows one inline safety sentence and a Privacy link—no popup/checkbox—and sends a random per-tab session ID that AIOS hashes before transcript storage. See START_HERE "Azai chat widget" section. Don't add AI logic here.
 
 ## Current deploy shape
 
@@ -20,12 +20,14 @@ Important deploy files:
 - `package.json` — deploy/check scripts.
 - `public/index.html` — homepage and main shell.
 
-No DB, Supabase, or environment-variable work lives in this repo. The only Worker route is `GET /api/health` for CommandOS Suite Truth version proof; all public site traffic delegates to static assets. The Azai widget calls the AIOS public advisor (`POST https://ai.odarius.com/public/advisor`) client-side only — the brain and any AI behaviour changes live in the `chwong1979/aios` repo, not here.
+The Worker owns three routes: `GET /api/health`, `POST /api/visitor`, and `POST /api/advisor`; all other traffic delegates to static assets. The advisor route transparently proxies AIOS, so the brain and any AI behavior changes remain in `chwong1979/aios`. Successful signals call the secret-authenticated `public.emit_aziana_suite_alert` RPC from `db/0001_aziana_suite_alert_rpc.sql`. The RPC accepts no question text, history, raw session ID, IP, or page data.
+
+Required runtime binding: Cloudflare secret `AZIANA_SUITE_TOKEN`. The Supabase URL and publishable key in `wrangler.jsonc` are non-secret. Delivery is fail-soft: missing notification configuration cannot break the site or Azai.
 
 ## Current public surfaces
 
 - Homepage: `public/index.html`
-- Health proof: `worker/index.js` (`GET /api/health`)
+- Worker API: `worker/index.js` (`GET /api/health`, `POST /api/visitor`, `POST /api/advisor`)
 - Azai chat widget: `public/azi-chat.js` (loaded by `index.html`; brain = AIOS public advisor)
 - Privacy disclosure: `public/privacy.html` (linked from Azai and the homepage footer)
 - FAQ page: `public/faq.html`
@@ -38,7 +40,7 @@ No DB, Supabase, or environment-variable work lives in this repo. The only Worke
 
 ## Cleanup pass notes
 
-The 2026-07-02 governance slice added `/api/health` only. It did not touch site content, visuals, CSS, assets, order/reservation integration IDs, or SEO/business facts.
+The 2026-07-13 Suite slice adds generic, owner-scoped, deduplicated PortalOS notifications for active visitors and successful Azai questions. It changes no visual content, CSS, images, order/reservation IDs, SEO facts, or AI behavior.
 
 ## Known follow-ups / possible future build work
 
