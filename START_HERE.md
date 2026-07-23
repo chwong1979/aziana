@@ -1,5 +1,7 @@
 # Aziana site — START HERE
 
+> **LATEST — v0.5.1 (2026-07-22): customer language dropdown (i18n).** A language selector (English · Nederlands · Français · Español) is added to the top nav; the full homepage copy translates for customers — device-local (localStorage `aziana.lang`, defaults to the browser language), no login/kernel (customers aren't suite users). Implemented as a single injected `<script>` before `</body>` in `public/index.html`: a DOM text-node engine that caches each node's English original and swaps it by an EN→{nl,fr,es} catalog (99 entries). NOT translated by design: dish names (Babi Pangang, Dragon Roll, etc.), place/brand names (Bobby's Marina, Philipsburg, Aziana BV), the address, phone and hours numerals, the GloriaFood order widget (its own language), and the SEO landing pages (English-keyword-tuned). Translations are MACHINE-DRAFTED — native review pending before treating as final brand copy. `<html lang>` updates on switch. Worker `VERSION` 0.5.0→0.5.1 (frontend-only; worker logic unchanged). Verify: injected engine `node --check` clean; `node --test worker/*.test.js` 4/4. Deploy: `npm run deploy` (`wrangler deploy`) — no CI. Rollback: drop the injected `<script>` + restore VERSION 0.5.0.
+
 **Repo:** `chwong1979/aziana`  
 **Site:** Aziana marketing website  
 **Primary domain:** `https://aziana.sx`  
