@@ -134,8 +134,8 @@
     if(document.getElementById("az-lang"))return;
     var nav=document.querySelector("nav.nav")||document.querySelector(".nav"); if(!nav)return;
     var sel=document.createElement("select"); sel.id="az-lang"; sel.setAttribute("aria-label","Choose language");
-    sel.style.cssText="margin-left:.75rem;background:transparent;color:inherit;border:1px solid currentColor;border-radius:8px;padding:3px 8px;font:inherit;cursor:pointer";
-    sel.innerHTML=LANGS.map(function(l){return "<option value=\""+l[0]+"\""+(l[0]===_lang?" selected":"")+">"+l[1]+"</option>";}).join("");
+    sel.style.cssText="margin-left:.75rem;background:var(--ink2,#15121a);color:var(--bone,#f3ece0);color-scheme:dark;border:1px solid currentColor;border-radius:8px;padding:3px 8px;font:inherit;cursor:pointer";
+    sel.innerHTML=LANGS.map(function(l){return "<option style=\"background:#15121a;color:#f3ece0\" value=\""+l[0]+"\""+(l[0]===_lang?" selected":"")+">"+l[1]+"</option>";}).join("");
     sel.addEventListener("change",function(e){setLang(e.target.value);});
     nav.appendChild(sel);
   }
