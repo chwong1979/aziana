@@ -1,5 +1,12 @@
 # Aziana site — START HERE
 
+> **LATEST — v0.6.0 (2026-08-10): natural multilingual website copy.** The existing
+> English, Dutch, French and Spanish homepage now treats each language as a peer. Core visitor
+> story blocks are written as complete, readable messages for that audience instead of being
+> mechanically derived sentence by sentence from English. Names, dates, hours, contact details,
+> order/reservation IDs, SEO metadata and the language selector remain unchanged. Tests enforce
+> four-language block parity. No native-speaker review is claimed.
+
 > **LATEST — v0.5.2 (2026-07-23): readable language menu.** The homepage language selector and its opened option list now use Aziana's dark panel and light text colors, with the browser's dark-control color scheme enabled. This fixes the white dropdown that made the language names unreadable. Worker `VERSION` 0.5.1→0.5.2; frontend styling only.
 >
 > **v0.5.1 (2026-07-22): customer language dropdown (i18n).** A language selector (English · Nederlands · Français · Español) is added to the top nav; the full homepage copy translates for customers — device-local (localStorage `aziana.lang`, defaults to the browser language), no login/kernel (customers aren't suite users). Implemented as a single injected `<script>` before `</body>` in `public/index.html`: a DOM text-node engine that caches each node's English original and swaps it by an EN→{nl,fr,es} catalog (99 entries). NOT translated by design: dish names (Babi Pangang, Dragon Roll, etc.), place/brand names (Bobby's Marina, Philipsburg, Aziana BV), the address, phone and hours numerals, the GloriaFood order widget (its own language), and the SEO landing pages (English-keyword-tuned). Translations are MACHINE-DRAFTED — native review pending before treating as final brand copy. `<html lang>` updates on switch.
@@ -9,7 +16,7 @@
 **Primary domain:** `https://aziana.sx`  
 **Odarius domain:** `https://aziana.odarius.com`  
 **Worker fallback:** `aziana.chwong1979.workers.dev`  
-**Current version pointer:** `package.json` = `0.5.2` (readable dark language dropdown; notification and privacy behavior unchanged).
+**Current version pointer:** `package.json` = `0.6.0` (natural EN/NL/FR/ES homepage story copy; notification and privacy behavior unchanged).
 **Rollback branch for this cleanup:** `backup/pre-doc-trim-2026-06-23`
 
 ## Azai chat widget (LIVE — promoted 2026-06-27)

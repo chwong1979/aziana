@@ -108,8 +108,8 @@
 <script>
 /* Aziana i18n (roadmap 225) — customer language dropdown. Device-local (localStorage), no login.
    DOM text-node translation keyed by the English source string; dish names, places, address,
-   phone and times are absent from the catalog so they stay as-is. Machine-drafted NL/FR/ES,
-   native review pending. */
+   phone and times are absent from the catalog so they stay as-is. Visitor-facing story blocks
+   are adapted as complete native-language messages by localized-copy.js. */
 (function(){
   var LANGS=[["en","English"],["nl","Nederlands"],["fr","Français"],["es","Español"]];
   var SUP=["en","nl","fr","es"];
@@ -143,5 +143,6 @@
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot); else boot();
 })();
 </script>
+<script src="localized-copy.js" defer></script>
 </body>
 </html>
