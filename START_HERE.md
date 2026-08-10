@@ -1,5 +1,12 @@
 # Aziana site — START HERE
 
+> **LATEST — v0.6.1 (2026-08-10): multilingual catering page.** The dedicated events and
+> catering page now follows the homepage language preference and supports English, Dutch, French
+> and Spanish as complete peer copy documents. Each locale carries the same offer in natural
+> visitor-facing language, including inquiry templates and metadata. Contact facts, the menu URL,
+> analytics attributes and event integration hooks remain unchanged. Tests enforce four-language
+> document completeness. No native-speaker review is claimed.
+
 > **LATEST — v0.6.0 (2026-08-10): natural multilingual website copy.** The existing
 > English, Dutch, French and Spanish homepage now treats each language as a peer. Core visitor
 > story blocks are written as complete, readable messages for that audience instead of being
@@ -16,7 +23,7 @@
 **Primary domain:** `https://aziana.sx`  
 **Odarius domain:** `https://aziana.odarius.com`  
 **Worker fallback:** `aziana.chwong1979.workers.dev`  
-**Current version pointer:** `package.json` = `0.6.0` (natural EN/NL/FR/ES homepage story copy; notification and privacy behavior unchanged).
+**Current version pointer:** `package.json` = `0.6.1` (natural EN/NL/FR/ES homepage and catering-page copy; notification and privacy behavior unchanged).
 **Rollback branch for this cleanup:** `backup/pre-doc-trim-2026-06-23`
 
 ## Azai chat widget (LIVE — promoted 2026-06-27)

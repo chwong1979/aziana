@@ -112,7 +112,7 @@
     return campaigns.filter(isActive);
   };
 
-  const campaignCard = (c) => `<article class="campaign-card">
+  const campaignCard = (c) => `<article class="campaign-card" data-campaign-id="${c.id || ''}">
     <small>${c.season || 'Aziana'}</small>
     <h3><a href="${c.href}">${c.title}</a></h3>
     <p>${c.summary}</p>
@@ -180,6 +180,7 @@
     applyInquiryLinks(siteData);
     renderCampaigns(campaignData);
     renderSeasonLabel(campaignData);
+    document.dispatchEvent(new CustomEvent('aziana:content-ready'));
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
