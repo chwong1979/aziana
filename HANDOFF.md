@@ -6,7 +6,7 @@ Aziana is a static marketing website for the restaurant at Bobby's Marina, Phili
 
 - Repo: `chwong1979/aziana`
 - Deploy: Cloudflare Workers Static Assets from `public/`
-- Version pointer: `package.json` = `0.5.0`
+- Version pointer: `package.json` = `0.6.0`
 - Rollback branch for cleanup: `backup/pre-doc-trim-2026-06-23`
 - **Azai chat widget source v0.1.5:** `public/azi-chat.js` + one `<script>` line in `index.html`. Thin front-end; brain remains AIOS through Aziana's same-origin `/api/advisor` proxy. The widget shows one inline safety sentence and a Privacy link—no popup/checkbox—and sends a random per-tab session ID that AIOS hashes before transcript storage. See START_HERE "Azai chat widget" section. Don't add AI logic here.
 
@@ -37,6 +37,15 @@ Required runtime binding: Cloudflare secret `AZIANA_SUITE_TOKEN`. The Supabase U
 - Shared data: `public/site-data.json`
 - Images: `public/images/`
 - Menu PDFs: `public/menus/`
+
+## Multilingual website copy — 2026-08-10
+
+The homepage supports English, Dutch, French and Spanish. `public/localized-copy.js` owns the
+visitor story as peer, block-level locale documents, so Dutch, French and Spanish can express the
+same message naturally instead of inheriting English sentence structure. The earlier inline catalog
+continues to cover compact navigation and action labels. Facts and integration identifiers remain in
+`public/index.html`; no native-speaker review has been claimed. `worker/localized-copy.test.js`
+enforces catalog completeness and wiring.
 
 ## Cleanup pass notes
 
