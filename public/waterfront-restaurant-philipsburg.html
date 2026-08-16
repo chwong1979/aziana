@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>(function(){try{var c=localStorage.getItem("aziana.theme");var t=(c==="light"||c==="dark")?c:(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Waterfront Restaurant in Philipsburg | Aziana</title>
@@ -32,5 +33,6 @@
   </main>
   <script src="site-automation.js" defer></script>
   <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+  <script>(function(){function apply(t){document.documentElement.setAttribute("data-theme",t);try{localStorage.setItem("aziana.theme",t);}catch(e){}}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest('[data-az-action="theme"]');if(!b)return;e.preventDefault();apply(document.documentElement.getAttribute("data-theme")==="light"?"dark":"light");});})();</script>
 </body>
 </html>
