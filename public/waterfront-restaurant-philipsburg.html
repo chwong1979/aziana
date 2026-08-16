@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>(function(){try{var c=localStorage.getItem("aziana.theme");var t=(c==="light"||c==="dark")?c:(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <script>(function(){try{var c=localStorage.getItem("aziana.theme");var h=new Date(),m=h.getHours()*60+h.getMinutes();var day=(m>=360&&m<1110);var t=(c==="light"||c==="dark")?c:(day?"light":"dark");document.documentElement.setAttribute("data-theme",t);document.documentElement.setAttribute("data-theme-auto",(c==="light"||c==="dark")?"off":"on");}catch(e){}})();</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Waterfront Restaurant in Philipsburg | Aziana</title>
@@ -13,7 +13,7 @@
 </head>
 <body data-page="waterfront-restaurant-philipsburg">
   <main>
-    <a class="back" href="/">← Back to Aziana</a>
+    <div class="page-chrome"><a class="back" href="/">← Back to Aziana</a><button type="button" class="theme-switch" data-az-action="theme" role="switch" aria-checked="false" aria-label="Day or night appearance" title="Day or night appearance"><span class="ts-track" aria-hidden="true"><span class="ts-sun">☀</span><span class="ts-moon">☾</span><span class="ts-knob"></span></span></button></div>
     <h1>Waterfront Restaurant in Philipsburg</h1>
     <p class="lede">Aziana brings sushi, seafood, steaks and Asian fusion flavors to Bobby's Marina in Philipsburg, Sint Maarten.</p>
     <div class="btns">
@@ -33,6 +33,6 @@
   </main>
   <script src="site-automation.js" defer></script>
   <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
-  <script>(function(){function apply(t){document.documentElement.setAttribute("data-theme",t);try{localStorage.setItem("aziana.theme",t);}catch(e){}}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest('[data-az-action="theme"]');if(!b)return;e.preventDefault();apply(document.documentElement.getAttribute("data-theme")==="light"?"dark":"light");});})();</script>
+  <script>(function(){function byClock(){var d=new Date(),m=d.getHours()*60+d.getMinutes();return (m>=360&&m<1110)?"light":"dark";}function set(t,manual){document.documentElement.setAttribute("data-theme",t);document.documentElement.setAttribute("data-theme-auto",manual?"off":"on");var b=document.querySelector('[data-az-action="theme"]');if(b)b.setAttribute("aria-checked",t==="light"?"true":"false");if(manual){try{localStorage.setItem("aziana.theme",t);}catch(e){}}}set(document.documentElement.getAttribute("data-theme")||byClock(),document.documentElement.getAttribute("data-theme-auto")==="off");document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest('[data-az-action="theme"]');if(!b)return;e.preventDefault();set(document.documentElement.getAttribute("data-theme")==="light"?"dark":"light",true);});document.addEventListener("visibilitychange",function(){if(document.visibilityState!=="visible")return;if(document.documentElement.getAttribute("data-theme-auto")!=="on")return;set(byClock(),false);});})();</script>
 </body>
 </html>
