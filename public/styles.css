@@ -34,3 +34,17 @@
 [data-theme="light"] .card.photo-card div{background:linear-gradient(180deg,transparent,rgba(12,10,13,.9))}
 [data-theme="light"] .gallery-card:after{background:linear-gradient(180deg,transparent,rgba(12,10,13,.82))}
 [data-theme="light"] .events figcaption{background:rgba(12,10,13,.75)}
+/* ⚠ A SWITCH, NOT A MENU ITEM. The first version was a text button in the nav list and read
+   as another link. This is a track with a knob that slides, which is what a person recognises
+   as something they can flip. role="switch" + aria-checked keeps it honest for screen readers. */
+.page-chrome{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.theme-switch{display:inline-flex;align-items:center;padding:0;border:0;background:transparent;cursor:pointer;line-height:1}
+.ts-track{position:relative;display:inline-flex;align-items:center;justify-content:space-between;width:52px;height:26px;padding:0 5px;border:1px solid var(--line);border-radius:999px;background:rgba(var(--ink-rgb),.35);transition:background .25s ease,border-color .25s ease}
+.theme-switch:hover .ts-track{border-color:var(--amber)}
+.ts-sun,.ts-moon{font-size:.72rem;line-height:1;opacity:.55;transition:opacity .25s ease}
+.ts-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:var(--amber);transition:transform .25s ease}
+[data-theme="light"] .ts-knob{transform:translateX(26px)}
+[data-theme="light"] .ts-sun{opacity:1}
+[data-theme="dark"] .ts-moon,:root:not([data-theme="light"]) .ts-moon{opacity:1}
+.theme-switch:focus-visible .ts-track{outline:2px solid var(--amber);outline-offset:2px}
+@media(max-width:850px){.nav ul .theme-switch{min-height:48px;padding-left:0}}
