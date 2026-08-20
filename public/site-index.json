@@ -1,10 +1,11 @@
 {
   "version": "0.4.0",
-  "last_updated": "2026-06-22",
+  "last_updated": "2026-08-20",
   "site": "https://aziana.sx/",
   "pages": [
     {"url":"https://aziana.sx/","type":"homepage","title":"Aziana | Sushi & Asian Fusion in Philipsburg, Sint Maarten","intent":["brand","restaurant","online ordering","reservations","location"]},
     {"url":"https://aziana.sx/faq.html","type":"faq","title":"Aziana FAQ","intent":["hours","location","contact","reservations","ordering"]},
+    {"url":"https://aziana.sx/parking","type":"guest_information_page","title":"Parking at Aziana","intent":["parking","validated parking","Bobby's Marina","parking rates","lost ticket"]},
     {"url":"https://aziana.sx/seasonal-campaigns.html","type":"automatic_campaign_hub","title":"Current Aziana Campaigns","intent":["seasonal campaigns","events","ordering","groups","takeout"]},
     {"url":"https://aziana.sx/events-catering-sint-maarten.html","type":"conversion_landing_page","title":"Events and Catering in Sint Maarten","intent":["events","catering","groups","company dinners","private dining"]},
     {"url":"https://aziana.sx/sushi-philipsburg.html","type":"seo_landing_page","title":"Sushi in Philipsburg, Sint Maarten","intent":["sushi","sashimi","nigiri","poke bowls","Philipsburg"]},

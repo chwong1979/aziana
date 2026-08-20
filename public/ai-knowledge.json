@@ -1,8 +1,8 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "purpose": "Starter in-house Q&A and guest-answer database for the future AIOS Aziana assistant. This file should answer common questions without needing an external AI call whenever the answer is already known.",
   "source_policy": "Built from verified Aziana website repository content and known Aziana business facts. Do not invent live availability, exact wait times, delivery coverage, price changes, or special accommodations without current system data.",
-  "last_updated": "2026-06-22",
+  "last_updated": "2026-08-20",
   "business": {
     "name": "Aziana",
     "legal_name": "Aziana BV",
@@ -92,6 +92,13 @@
     }
   ],
   "qa": [
+    {
+      "id": "parking_001",
+      "category": "parking",
+      "questions": ["Is there parking?", "Where do I park?", "Do you have parking at Aziana?", "Is parking free?", "Do you validate parking?", "How much is parking at Bobby's Marina?", "Can you stamp my parking ticket?", "I lost my parking ticket, what now?", "Is there parking for a group or a party?"],
+      "answer": "Aziana is inside Bobby's Marina, and the marina runs a paid, secured car park on the property. Aziana does not own it and takes none of the parking money. For diners, Aziana stamps up to two hours at its own cost, valid from 6pm to 6am, with one stamp for every $25 on the bill. Beyond the two hours the marina's evening rate is $1 per hour per car, reduced from $2 in the daytime. A lost ticket carries a $40 fee to exit, which is the marina's policy. For a large party, email dock@bobbysmarina.com ahead of time to ask what can be arranged. Full details: https://aziana.sx/parking",
+      "confidence": "high"
+    },
     {
       "id": "location_001",
       "category": "location",
