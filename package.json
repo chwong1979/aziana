@@ -3,12 +3,13 @@
   "version": "0.9.1",
   "type": "module",
   "private": true,
-  "description": "Static marketing website for Aziana BV, Philipsburg, Sint Maarten",
+  "description": "Static marketing website for Aziana at Bobby's Marina, Philipsburg, Sint Maarten.",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "check": "wrangler deploy --dry-run",
+    "test": "node --test worker/*.test.js"
   },
   "devDependencies": {
-    "wrangler": "^3.90.0"
+    "wrangler": "latest"
   }
 }
