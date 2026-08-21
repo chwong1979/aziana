@@ -5,3 +5,5 @@
 .ts-sun,.ts-moon{font-size:.72rem;line-height:1;opacity:.55}
 .ts-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:currentColor;transition:transform .25s ease}
 [data-theme="light"] .ts-knob{transform:translateX(26px)}
+:root[data-theme="light"]{color-scheme:light;--ink:#fbf8f4;--panel:#ffffff;--bone:#241d24;--dim:#4a4048;--amber:#a85c06;--line:rgba(36,29,36,.16)}
+:root[data-theme="light"] .card,:root[data-theme="light"] .auto-contact,:root[data-theme="light"] .campaign-card{background:var(--panel)}
