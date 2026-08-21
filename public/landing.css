@@ -5,3 +5,4 @@
 .ts-sun,.ts-moon{font-size:.72rem;line-height:1;opacity:.55}
 .ts-knob{position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:currentColor;transition:transform .25s ease}
 [data-theme="light"] .ts-knob{transform:translateX(26px)}
+.footer-partners{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line)}.footer-partners h3{font-family:inherit;font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin:0 0 .8rem}.footer-partners ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.55rem 1.15rem}.footer-partners li{margin:0}.footer-partners a{color:var(--dim);font-size:.86rem;text-decoration:none;border-bottom:1px solid transparent}.footer-partners a:hover,.footer-partners a:focus-visible{color:var(--amber);border-bottom-color:var(--amber)}
