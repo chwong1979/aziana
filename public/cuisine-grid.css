@@ -8,7 +8,10 @@
    a hole. */
 .cards { grid-auto-flow: dense; }
 
-/* The category list is a set of links now, not decoration. It highlighted amber
-   on hover while doing nothing, which reads as a broken link; each entry points
-   at the landing page for that part of the menu, so the highlight is honest. */
-a.menu-item { display: block; }
+/* NO HOVER ON THE CATEGORY LIST, AND NO LINKS EITHER. It used to highlight amber
+   on hover while going nowhere, which reads as a broken link. The obvious repair
+   was to point each entry at its landing page — but those pages exist to RECEIVE
+   backlinks, and Chin does not want the homepage linking out to them. So the list
+   is plain text: no anchors in the markup for a crawler to follow, and no hover
+   state suggesting there is something to click. Do not reintroduce either. */
+.menu-item:hover h3 { color: inherit; }
