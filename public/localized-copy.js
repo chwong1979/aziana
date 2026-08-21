@@ -30,13 +30,13 @@
       hoursNote: 'De bar kan later openblijven. Neem contact met ons op voor de actuele tijden van vandaag.'
     },
     fr: {
-      hero: 'Envie de sushis, de poisson frais, d’un steak ou d’un poke bowl ? Aziana vous accueille aussi avec les spécialités sino-indonésiennes qui font partie de notre histoire familiale, au bord de la marina.',
+      hero: 'Envie de sushis, de poisson frais, d’un steak ou d’un poke bowl ? Aziana vous accueille aussi avec les spécialités sino-indonésiennes qui font partie de notre histoire familiale, au bord de la marina.',
       setting: 'Installez-vous dans notre salle chaleureuse aux poutres de bois, avec la marina juste derrière les fenêtres. L’endroit se prête aussi bien à un déjeuner de sushis qu’à un dîner en famille ou une soirée entre amis.',
       welcome: 'Que vous visitiez Philipsburg, reveniez d’une sortie en mer ou cherchiez simplement une bonne table, Aziana vous reçoit autour de sushis, poissons, grillades et cuisine fusion asiatique.',
-      cuisine: 'Sushis préparés à la commande, poke bowls colorés, poissons grillés et recettes sino-indonésiennes : notre carte fait vivre une tradition familiale née à Philipsburg.',
+      cuisine: 'Sushis préparés à la commande, poke bowls colorés, poissons grillés et recettes sino-indonésiennes : notre carte fait vivre une tradition familiale née à Philipsburg.',
       gallery: 'Des rolls hauts en couleur, des bowls généreux et des assiettes à partager, avec la marina en toile de fond.',
       story1: 'Notre histoire commence en 1995, lorsque Molly et Mario ouvrent Old Captain à Great Bay et font découvrir à Philipsburg les sushis et la cuisine sino-indonésienne.',
-      story2: 'Cette tradition familiale s’est poursuivie au fil des restaurants. Depuis 2018, elle a trouvé une nouvelle maison à Bobby\'s Marina : Aziana.',
+      story2: 'Cette tradition familiale s’est poursuivie au fil des restaurants. Depuis 2018, elle a trouvé une nouvelle maison à Bobby\'s Marina : Aziana.',
       bar: 'Commencez la soirée autour d’un verre, prolongez le dîner ou venez simplement profiter d’un moment détendu à Philipsburg.',
       events: 'Réunissez vos proches ou vos collègues pour un anniversaire, un dîner d’entreprise ou une fête privée — en salle, sur la terrasse ou près de la marina.',
       partners: 'Nous sommes installés dans une marina, sur une île où l’on se recommande encore de bouche à oreille. Voici les voisins, les guides et les associations que nous côtoyons — à regarder pendant que vous préparez votre visite.',
