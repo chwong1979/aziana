@@ -1,0 +1,30 @@
+/* Cuisine section grids.
+   Lives outside styles.css only because binary and large-file pushes to this repo
+   currently go through the GitHub connector by hand; when git push works again this
+   belongs back in styles.css. See roadmap 984.
+
+   TWO RULES MATTER HERE.
+   1. The dish grid is uniform. Every card is 4:3 and one column wide, so three
+      columns always tile exactly. Mixed-width cards left holes and left short
+      cards floating in tall rows — that is what this replaced.
+   2. grid-auto-flow:dense is a seatbelt, not a layout. If someone adds a card of a
+      different span later, the grid backfills instead of opening a gap. */
+.cards { grid-auto-flow: dense; }
+
+/* The category list carries a picture now, so it needs a shape of its own.
+   16:9 keeps the tiles clearly subordinate to the 4:3 dish cards above them. */
+.menu-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-bottom: .9rem;
+  filter: saturate(1.06) contrast(1.03) brightness(.94);
+}
+
+/* Nine pictures one per row is a long scroll on a phone. Two up reads better,
+   and this has to come after the 850px block in styles.css to win. */
+@media (max-width: 850px) {
+  .menu-grid { grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+  .menu-item h3 { font-size: 1.12rem; }
+  .menu-item p { font-size: .84rem; }
+}
