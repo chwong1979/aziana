@@ -28,7 +28,7 @@
     .actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:3rem} .fine{font-size:.9rem;margin-top:2.5rem}
     footer{margin-top:3rem;color:var(--dim);font-size:.9rem;border-top:1px solid var(--line);padding-top:1rem}
     .theme-switch{width:52px;height:28px;padding:0;border:1px solid var(--line);background:var(--panel);cursor:pointer;position:relative;border-radius:999px} .ts-track{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 .4rem;font-size:.72rem;color:var(--dim)} .ts-knob{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--amber);transition:transform .2s ease} :root[data-theme="light"] .ts-knob{transform:translateX(24px)}
-    .footer-partners{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line)}.footer-partners h3{font-family:inherit;font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin:0 0 .8rem}.footer-partners ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.55rem 1.15rem}.footer-partners li{margin:0}.footer-partners a{color:var(--dim);font-size:.86rem;text-decoration:none;border-bottom:1px solid transparent}.footer-partners a:hover,.footer-partners a:focus-visible{color:var(--amber);border-bottom-color:var(--amber)}
+    
     @media(max-width:560px){.btn{width:100%}#code{flex:1 1 100%}}
   </style>
 </head>
@@ -56,7 +56,7 @@
       <a class="btn" href="/parking">Parking</a>
     </div>
 
-    <footer>&copy; 2018 - <span data-auto-year>2026</span> Aziana BV &middot; Philipsburg, Sint Maarten<nav class="footer-partners" aria-label="Partners and neighbours"><h3>Partners</h3><ul><li><a href="https://destinito.com" target="_blank" rel="noopener noreferrer">Destinito</a></li><li><a href="https://www.gofastferry.com" target="_blank" rel="noopener noreferrer">GoFastFerry</a></li><li><a href="https://www.bobbysmarina.com" target="_blank" rel="noopener noreferrer">Bobby&#39;s Marina</a></li><li><a href="https://shta.com" target="_blank" rel="noopener noreferrer" title="Sint Maarten Hospitality &amp; Trade Association">SHTA</a></li><li><a href="https://www.visitstmaarten.com" target="_blank" rel="noopener noreferrer">St Maarten Visit</a></li><li><a href="https://stmaartenboardwalk.com" target="_blank" rel="noopener noreferrer">St Maarten Boardwalk</a></li></ul></nav></footer>
+    <footer>&copy; 2018 - <span data-auto-year>2026</span> Aziana BV &middot; Philipsburg, Sint Maarten</footer>
   </main>
   <script src="site-automation.js" defer></script>
   <script>(function(){var f=document.querySelector('.voucher-form'),i=document.getElementById('code');if(!f||!i)return;function clean(v){return String(v||'').replace(/[\s-]+/g,'').toUpperCase().slice(0,16);}i.addEventListener('input',function(){var p=clean(i.value);if(i.value!==p)i.value=p;});f.addEventListener('submit',function(){i.value=clean(i.value);});})();</script>
