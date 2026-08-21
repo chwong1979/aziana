@@ -1,5 +1,32 @@
 # Aziana site — START HERE
 
+> **LATEST — v0.8.0 (2026-08-21): the people who send us customers are on the page.** A partner
+> strip now sits in the footer of every page that has a footer (14 existing pages plus the new
+> voucher page): Destinito, GoFastFerry, Bobby's Marina, SHTA, St Maarten Visit and St Maarten
+> Boardwalk, each `target="_blank" rel="noopener noreferrer"`, each URL fetched live before it was
+> written. Plain text links, not logos — the existing footer carries no third-party logo anywhere
+> and four columns of plain text links, so logos would have been a new visual language. `/parking`
+> is now the fifth item in the footer **Explore** list; it was previously reachable only from a
+> printed bill. And `public/voucher.html` is new: `https://aziana.sx/voucher`, a deliberately dumb
+> `<form method="get" action="https://pos.odarius.com/order/aziana/voucher">` so a printed gift
+> ticket can carry Aziana's own domain. It does **not** validate the code, look it up, or call
+> Supabase — the platform page answers wrong codes and non-existent codes identically on purpose.
+> It works with JavaScript switched off; with JS the code is stripped of spaces and dashes,
+> upper-cased and capped at 16 characters before it is sent. Roadmap rank 977, PR #23.
+>
+> ⚠ **Two version fields, and one of them was lying.** `package.json` and `worker/index.js`
+> `VERSION` both exist and **only the worker constant reaches `/api/health`**. PRs #19–#22 bumped
+> `package.json` and left the worker alone, so `/api/health` served `0.6.1` across four shipped
+> releases — and `command.apps` "matched live" exactly, because both read the same stale source.
+> Both fields are now `0.8.0`. **If you bump this repo, bump `worker/index.js`.**
+>
+> ⚠ **Known defect, roadmap rank 980.** Seven pages carry the day/night switch over an inline
+> `<style>` block that has no `[data-theme="light"]` palette at all — `parking.html`, `faq.html`,
+> `privacy.html`, `sushi-philipsburg.html`, `seasonal-campaigns.html`,
+> `events-catering-sint-maarten.html`, `404.html`. The knob slides and the page stays dark. Only
+> `index.html` (`styles.css`) and the six `landing.css` pages have the light palette;
+> `voucher.html` ships with it and can be copied verbatim.
+
 > **LATEST — v0.6.1 (2026-08-10): multilingual catering page.** The dedicated events and
 > catering page now follows the homepage language preference and supports English, Dutch, French
 > and Spanish as complete peer copy documents. Each locale carries the same offer in natural
@@ -23,7 +50,7 @@
 **Primary domain:** `https://aziana.sx`  
 **Odarius domain:** `https://aziana.odarius.com`  
 **Worker fallback:** `aziana.chwong1979.workers.dev`  
-**Current version pointer:** `package.json` = `0.6.1` (natural EN/NL/FR/ES homepage and catering-page copy; notification and privacy behavior unchanged).
+**Current version pointer:** `package.json` = `0.8.0` **and** `worker/index.js` `VERSION` = `0.8.0` — these two must be bumped together; only the worker constant reaches `/api/health`.
 **Rollback branch for this cleanup:** `backup/pre-doc-trim-2026-06-23`
 
 ## Azai chat widget (LIVE — promoted 2026-06-27)
