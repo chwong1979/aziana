@@ -3,7 +3,7 @@ import {
   hashSessionId,
 } from './notifications.js';
 
-const VERSION = '0.9.2';
+const VERSION = '0.9.3';
 const ADVISOR_URL = 'https://ai.odarius.com/public/advisor';
 const MAX_ADVISOR_BYTES = 32 * 1024;
 
