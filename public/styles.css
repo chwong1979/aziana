@@ -49,3 +49,15 @@
 .theme-switch:focus-visible .ts-track{outline:2px solid var(--amber);outline-offset:2px}
 @media(max-width:850px){.nav ul .theme-switch{min-height:48px;padding-left:0}}
 .footer-partners{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line)}.footer-partners h3{font-family:inherit;font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin:0 0 .8rem}.footer-partners ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.55rem 1.15rem}.footer-partners li{margin:0}.footer-partners a{color:var(--dim);font-size:.86rem;text-decoration:none;border-bottom:1px solid transparent}.footer-partners a:hover,.footer-partners a:focus-visible{color:var(--amber);border-bottom-color:var(--amber)}
+
+/* Partners — the neighbours and guides who point people our way (roadmap 977) */
+.partners{background:linear-gradient(180deg,var(--ink),var(--ink2));border-top:1px solid var(--line)}
+.partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.75rem}
+.partner-card{display:flex;flex-direction:column;gap:.45rem;padding:1.5rem;border:1px solid var(--line);background:rgba(var(--panel-rgb),.55);transition:border-color .25s ease,background .25s ease,transform .25s ease}
+.partner-card:hover,.partner-card:focus-visible{border-color:var(--amber);background:rgba(var(--panel-rgb),.92);transform:translateY(-2px)}
+.partner-logo{display:block;height:88px;margin-bottom:.9rem;background-color:#fff;background-repeat:no-repeat;background-position:center;background-size:auto 60%;border:1px solid var(--line);border-radius:3px}
+.partner-card small{color:var(--amber);font-size:.66rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
+.partner-card h3{font-family:var(--display);font-size:1.5rem;font-weight:400;line-height:1.15}
+.partner-card p{color:var(--dim);font-size:.93rem}
+.partner-card .go{margin-top:auto;padding-top:1rem;color:var(--amber);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
+@media(max-width:850px){.partner-grid{grid-template-columns:1fr}}
